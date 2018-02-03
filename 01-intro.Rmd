@@ -1,0 +1,13 @@
+# Introduction {#intro}
+
+## User interface
+
+Functions in `fulltext` are setup to make the package as easy to use as possible. The functions are organized around use cases:
+
+* Search for articles
+* Get full text links
+* Get articles
+* Get abstracts
+* Pull out article sections of interest
+
+Because there are so many data sources for scholarly texts, it makes a lot of sense to simplify the details of each data source, and present a single user interface to all of them. 

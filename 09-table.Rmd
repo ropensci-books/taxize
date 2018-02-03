@@ -1,0 +1,38 @@
+# Table {#table}
+
+The `ft_table()` function makes it easy to create a data.frame of the text of PDF, plain text, and XML files, together with DOIs/IDs for each article. It's similar to the `readtext::readtext()` function, but is much more specific to just this package.
+
+With the output of `ft_table()` you can go directly into a text-mining package like `quanteda`.
+
+## Usage {#table-usage}
+
+
+```{r}
+library(fulltext)
+```
+
+Use `ft_table()` to pull out text from all articles.
+
+```{r}
+ft_table()
+```
+
+You can pull out just text from XML files
+
+```{r}
+ft_table(type = "xml")
+```
+
+You can pull out just text from PDF files
+
+```{r}
+ft_table(type = "pdf")
+```
+
+You can pull out XML but not extract the text. So you'll get XML strings
+that you can parse yourself with xpath/css selectors/etc.
+
+```{r}
+ft_table(xml_extract_text = FALSE)
+```
+

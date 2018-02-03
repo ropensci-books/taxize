@@ -1,0 +1,52 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Abstract {#abstract}
+
+Abstracts likely will come after searching for articles with `ft_search()`. There are a few scenarios in which simply getting abstracts in lieu of full text may be enough. 
+
+For example, if you know that a large portion of the articles you want to mine text from are closed access and you don't have access to them, you may have access to the abstracts depending on the publisher. 
+
+In addition, there are cases in which you really only need abstracts regardless of whether full text is available or not.
+
+`ft_abstract()` gives you access to the following data sources:
+
+```{r echo=FALSE, results='asis'}
+cat(paste(" -", paste(ft_abstract_ls(), collapse = "\n - ")))
+```
+
+## Usage {#abstract-usage}
+
+```{r}
+library(fulltext)
+```
+
+List data sources available
+
+```{r}
+ft_abstract_ls()
+```
+
+Search - by default searches against PLOS (Public Library of Science)
+
+```{r}
+res <- ft_search(query = "ecology")
+(dois <- res$plos$data$id)
+```
+
+Take the output of `ft_search()` and pass to `ft_abstract()`:
+
+```{r}
+out <- ft_abstract(dois)
+```
+
+and has slots for each data source:
+
+```{r}
+names(out)
+```

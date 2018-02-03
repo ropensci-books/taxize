@@ -1,0 +1,57 @@
+--- 
+title: "fulltext manual"
+# author: "Scott Chamberlain"
+date: "`r paste0('built on ', Sys.Date(), ' - for fulltext v', packageVersion('fulltext'))`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: ropensci/fulltext-book
+description: "fulltext manual"
+---
+
+# fulltext manual
+
+An R package to search across and get full text for journal articles
+
+The `fulltext` package makes it easy to do text-mining by supporting the following steps:
+
+* Search for articles
+* Fetch articles
+* Get links for full text articles (xml, pdf)
+* Extract text from articles / convert formats
+* Collect bits of articles that you actually need
+* Download supplementary materials from papers
+
+## Info
+
+* Code: <https://github.com/ropensci/fulltext/>
+* Issues/Bug reports: <https://github.com/ropensci/fulltext/issues>
+* CRAN: <https://cran.rstudio.com/web/packages/fulltext/>
+
+## Citing fulltext
+
+> Scott Chamberlain & Will Pearse (2018). fulltext: Full Text of 'Scholarly' 
+> Articles Across Many Data Sources. R package version 1.0.0.
+> https://github.com/ropensci/fulltext
+
+## Installation
+
+Stable version from CRAN
+
+```{r eval=FALSE}
+install.packages("fulltext")
+```
+
+Development version from GitHub
+
+```{r eval=FALSE}
+devtools::install_github("ropensci/fulltext")
+```
+
+Load library
+
+```{r}
+library('fulltext')
+```

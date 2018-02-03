@@ -1,0 +1,69 @@
+```{r echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+
+# Data sources {#data-sources}
+
+Data sources in `fulltext` include:
+
+* [Crossref](http://www.crossref.org/) - via the `rcrossref` package
+* [Public Library of Science (PLOS)](https://www.plos.org/) - via the `rplos` package
+* [Biomed Central](http://www.biomedcentral.com/)
+* [arXiv](https://arxiv.org) - via the `aRxiv` package
+* [bioRxiv](http://biorxiv.org/) - via the `biorxivr` package
+* [PMC/Pubmed via Entrez](http://www.ncbi.nlm.nih.gov/) - via the `rentrez` package
+* Many more are supported via the above sources (e.g., _Royal Society Open Science_ is
+available via Pubmed)
+* We __will__ add more, as publishers open up, and as we have time...See the [master list here](https://github.com/ropensci/fulltext/issues/4#issuecomment-52376743)
+
+Data sources will differ by the task you are doing in `fulltext`. 
+
+## Search {#ds-search}
+
+When searching with `ft_search()` you'll have access to a specific set of sources and no others, including:
+
+```{r echo=FALSE, results='asis'}
+cat(paste(" -", paste(ft_search_ls(), collapse = "\n - ")))
+```
+
+You can see what plugins there are with `ft_search_ls()`
+
+## Abstracts {#ds-abstracts}
+
+When using `ft_abstract()` you have access to:
+
+```{r echo=FALSE, results='asis'}
+cat(paste(" -", paste(ft_abstract_ls(), collapse = "\n - ")))
+```
+
+You can see what plugins there are with `ft_abstract_ls()`
+
+## Links {#ds-link}
+
+When using `ft_links()` to get links to full text, you'll have access to:
+
+```{r echo=FALSE, results='asis'}
+cat(paste(" -", paste(ft_links_ls(), collapse = "\n - ")))
+```
+
+You can see what plugins there are with `ft_links_ls()`
+
+## Getting full text {#ds-fulltext}
+
+While using `ft_get()` to fetch full text of articles you'll have access to a set of specific data sources (in this case publishers) for which we have some coded plugins (i.e., functions):
+
+```{r echo=FALSE, results='asis'}
+cat(paste(" -", paste(ft_get_ls(), collapse = "\n - ")))
+```
+
+You can see what plugins there are with `ft_get_ls()`
+
+But there are also other options within `ft_get()` that we take advantage of. This is because DOIs (Digital Object Identifiers) which you feed into `ft_get()` have a prefix that is affiliated with a specific publisher. We can then decide whether to use one of our plugins listed in `ft_get_ls()` or something else. If we don't have a plugin we first look to see if Crossref has the full text link to either XML or PDF for the DOI. If not, we then go to an API rOpenSci maintains at <https://ftdoi.org>[^1]. This API has a set of rules for each publisher - some of which are simple rules like add a URL plus a DOI - but some require an HTTP request then some string manipulation. 
+
+
+[^1]: You can use the ftdoi API from R with the <https://github.com/ropenscilabs/rftdoi> package.
