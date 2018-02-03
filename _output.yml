@@ -3,10 +3,10 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">fulltext manual</a></li>
+        <li><a href="./">taxize book</a></li>
       after: |
-        <li><a href="https://github.com/ropensci/fulltext-book" target="blank">(c) Scott Chamberlain, 2017</a></li>
-    edit: https://github.com/ropensci/fulltext-book/edit/master/%s
+        <li><a href="https://github.com/ropensci/taxize-book" target="blank">(c) Scott Chamberlain, 2018</a></li>
+    edit: https://github.com/ropensci/taxize-book/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

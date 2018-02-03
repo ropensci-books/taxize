@@ -2,12 +2,19 @@
 
 ## User interface
 
-Functions in `fulltext` are setup to make the package as easy to use as possible. The functions are organized around use cases:
+`taxize` is designed around making certain use cases easier - abstracting away the details of what each taxonomic data source requires for that use case. 
 
-* Search for articles
-* Get full text links
-* Get articles
-* Get abstracts
-* Pull out article sections of interest
+The use cases currently covered in `taxize`:
 
-Because there are so many data sources for scholarly texts, it makes a lot of sense to simplify the details of each data source, and present a single user interface to all of them. 
+* Taxonomic identifier from a taxonomic name
+* Taxonomic name from a taxonomic identifier
+* Taxonomic name from a vernacular name
+* Vernaculr name from a taxonomic name
+* Taxonomic hierarchy/classification from identifier or name
+* Children of an identifier or name
+* Immediate names above an identifier or name
+* All taxa downstream to a certain rank from identifier or name
+* Taxonomic name synonyms from identifier or name
+* Lowest common taxon and rank for an identifier or name
+* Resolve taxonomic names, i.e., fix spelling errors
+* Make a taxonomic tree from identifiers or names

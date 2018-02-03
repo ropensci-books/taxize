@@ -1,32 +1,26 @@
 # Authentication {#authentication}
 
-Some data sources require authentication. Here's a breakdown of how to do authentication by data source:
+Some data sources in `taxize` require authentication. Here's a breakdown of which ones require authentication, and how to do authentication by data source:
 
-* **BMC**: BMC is integrated into Springer Publishers now, 
-and that API requires an API key.  Get your key by signing up at 
-<https://dev.springer.com/>, then you'll get a key. Pass the key to a 
-named parameter `key` to `bmcopts`. Or, save your key in your `.Renviron` 
-file as `SPRINGER_KEY`, and we'll read it in for you, and you don't 
-have to pass in anything.
-* **Scopus**: Scopus requires an API key to search their service. Go to 
-<https://dev.elsevier.com/index.html>, register for an account, 
-then when you're in your account, create an API key. Pass in as variable 
-`key` to `scopusopts`, or store your key under the name 
-`ELSEVIER_SCOPUS_KEY` as an environment variable in `.Renviron`, and 
-we'll read it in for you. See `?Startup` in R for help.
-* **Microsoft**: Get a key by creating an Azure account at 
-<https://www.microsoft.com/cognitive-services/en-us/subscriptions>, 
-then requesting a key for **Academic Knowledge API** within 
-**Cognitive Services**. Store it as an environment variable in your 
-`.Renviron` file - see [Startup] for help. Pass your 
-API key into `maopts` as a named element in a list like 
-`list(key = Sys.getenv('MICROSOFT_ACADEMIC_KEY'))`
-* **Crossref**: Crossref encourages requests with contact information 
-(an email address) and will forward you to a dedicated API cluster 
-for improved performance when you share your email address with them.
-<https://github.com/CrossRef/rest-api-doc#good-manners--more-reliable-service>
-To pass your email address to Crossref via this client, store it 
-as an environment variable in `.Renviron` like `crossref_email = name@example.com`
+* **Tropicos**: Request a Tropicos API key from <http://services.tropicos.org/help?requestkey>
+* **EOL**: EOL requires an API key. You can pass in your EOL api
+key in the function call like `sci2comm('Helianthus annuus', key="<your eol api key>")`. You can also store your EOL API key in your .Rprofile file as `options(EOL_KEY = "<your eol api key>")`, or just for the current session by running `options(EOL_KEY = "<your eol api key>")` in the console.
+* **NCBI Entrez**: From NCBI's docs: "E-utils users are allowed 3 requests/second without an
+API key. Create an API key (in your account at
+<https://www.ncbi.nlm.nih.gov/account/>) to increase your e-utils limit to 10
+requests/second. Contact our help department (eutilities@ncbi.nlm.nih.gov)
+if you need higher throughput. Only one API Key per user. Replacing or
+deleting will inactivate the current key. Refer to documentation
+(<https://www.ncbi.nlm.nih.gov/books/NBK25497/>) for more."
+* **IUCN**: IUCN requires an API key. Request an API key at <http://apiv3.iucnredlist.org/api/v3/token>
 
-None needed for **PLOS**, **eLife**, **arxiv**, **biorxiv**, **Euro PMC**, or 
-**Entrez** (though soon you will get better rate limtits with auth for Entrez)
+Save your API keys as the following names either as R options or environment variables:
+
+* Tropicos: 'TROPICOS_KEY'
+* EOL: 'EOL_KEY'
+* IUCN: 'IUCN_REDLIST_KEY'
+* ENTREZ: 'ENTREZ_KEY'
+
+We'll read in your keys if we can find them in either R options or environment variables. See `?Startup` in R for details on how to store R options or environment variables. 
+
+We encourage users to use environment variables rather than R options because they are more standard across programming languages and computing environments.

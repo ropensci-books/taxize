@@ -1,13 +1,13 @@
-Package: fulltextbook
+Package: taxizebook
 Type: Book
-Title: Manual for the fulltext package.
+Title: Manual for the taxize package.
 Version: 0.1.0
 Authors@R: person("Scott", "Chamberlain", "myrmecocystus@gmail.com", c("aut", "cre"))
 Depends: R (>= 3.4.3)
-URL: https://github.com/ropensci/fulltext-book
-BugReports: https://github.com/ropensci/fulltext-book/issues
+URL: https://github.com/ropensci/taxize-book
+BugReports: https://github.com/ropensci/taxize-book/issues
 Imports:
   bookdown,
-  fulltext
+  taxize
 Remotes:
   rstudio/bookdown

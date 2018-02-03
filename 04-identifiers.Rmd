@@ -1,0 +1,19 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Identifiers {#identifiers}
+
+Taxonomic identifiers are the most important thing in `taxize`. We either need to get to an identifier for each name the user has, or take an identifier to do something else, for example get a taxonomic classification.
+
+## Usage {#search-usage}
+
+```{r}
+library(taxize)
+```
+
+more to come ...
