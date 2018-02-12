@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="data-sources.html">
-<link rel="next" href="identifiers.html">
+<link rel="prev" href="identifiers.html">
+<link rel="next" href="taxizedb.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -174,40 +174,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="authentication" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Authentication</h1>
-<p>Some data sources in <code>taxize</code> require authentication. Here’s a breakdown of which ones require authentication, and how to do authentication by data source:</p>
+<div id="classification" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Classification</h1>
+<p>The <code>classification()</code> function is one of the workhorses of the <code>taxize</code> package.</p>
+<p>A taxonomic classification - or hierarchy - is a fundamental set of information about any taxon. Biological taxonomy is arranged in a hierarchical fashion, with each species taxon name fitting into genera, and genera fitting into families, and so on all the way up to just a few categories of very high level organization.</p>
+<div id="classification-usage" class="section level2">
+<h2><span class="header-section-number">6.1</span> Usage</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(taxize)</a></code></pre></div>
+<p><code>classification()</code> has a number of high level features:</p>
 <ul>
-<li><strong>Tropicos</strong>: Request a Tropicos API key from <a href="http://services.tropicos.org/help?requestkey" class="uri">http://services.tropicos.org/help?requestkey</a></li>
-<li><strong>EOL</strong>: EOL requires an API key. You can pass in your EOL api
-key in the function call like <code>sci2comm('Helianthus annuus', key=&quot;&lt;your eol api key&gt;&quot;)</code>. You can also store your EOL API key in your .Rprofile file as <code>options(EOL_KEY = &quot;&lt;your eol api key&gt;&quot;)</code>, or just for the current session by running <code>options(EOL_KEY = &quot;&lt;your eol api key&gt;&quot;)</code> in the console.</li>
-<li><strong>NCBI Entrez</strong>: From NCBI’s docs: “E-utils users are allowed 3 requests/second without an
-API key. Create an API key (in your account at
-<a href="https://www.ncbi.nlm.nih.gov/account/" class="uri">https://www.ncbi.nlm.nih.gov/account/</a>) to increase your e-utils limit to 10
-requests/second. Contact our help department (<a href="mailto:eutilities@ncbi.nlm.nih.gov">eutilities@ncbi.nlm.nih.gov</a>)
-if you need higher throughput. Only one API Key per user. Replacing or
-deleting will inactivate the current key. Refer to documentation
-(<a href="https://www.ncbi.nlm.nih.gov/books/NBK25497/" class="uri">https://www.ncbi.nlm.nih.gov/books/NBK25497/</a>) for more.”</li>
-<li><strong>IUCN</strong>: IUCN requires an API key. Request an API key at <a href="http://apiv3.iucnredlist.org/api/v3/token" class="uri">http://apiv3.iucnredlist.org/api/v3/token</a></li>
-</ul>
-<p>Save your API keys as the following names either as R options or environment variables:</p>
+<li>It is vectorized. That is, it accepts any number of inputs and the output length should equal the input length</li>
+<li>It accepts various inputs:
 <ul>
-<li>Tropicos: ‘TROPICOS_KEY’</li>
-<li>EOL: ‘EOL_KEY’</li>
-<li>IUCN: ‘IUCN_REDLIST_KEY’</li>
-<li>ENTREZ: ‘ENTREZ_KEY’</li>
+<li>Taxonomic names as character strings</li>
+<li>Taxonomic identifiers as character stings or numeric values</li>
+<li>Any output of the various <code>get_*()</code> functions</li>
+</ul></li>
+<li>When there is data available, it always returns a data.frame, facilitating use downstream</li>
 </ul>
-<p>We’ll read in your keys if we can find them in either R options or environment variables. See <code>?Startup</code> in R for details on how to store R options or environment variables.</p>
-<p>We encourage users to use environment variables rather than R options because they are more standard across programming languages and computing environments.</p>
+</div>
+<div id="other-sections" class="section level2">
+<h2><span class="header-section-number">6.2</span> Other sections?</h2>
+<p>asdfadfasdf</p>
+</div>
+<div id="classification-related" class="section level2">
+<h2><span class="header-section-number">6.3</span> Related</h2>
+<p>Related functions include (note to self: link to these sections when available):</p>
+<ul>
+<li><code>children</code></li>
+<li><code>downstream</code></li>
+<li><code>upstream</code></li>
+<li><code>lowest_common</code></li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-sources.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="identifiers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="identifiers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taxizedb.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -236,7 +244,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/taxize-book/edit/master/03-authentication.Rmd",
+"link": "https://github.com/ropensci/taxize-book/edit/master/05-classification.Rmd",
 "text": "Edit"
 },
 "download": ["_main.pdf", "_main.epub"],

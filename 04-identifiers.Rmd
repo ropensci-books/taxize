@@ -10,12 +10,6 @@ knitr::opts_chunk$set(
 
 Taxonomic identifiers are a central concept in `taxize` - and around which many things depend on. We often either need to get to an identifier for each name the user has, or take an identifier to do something else, for example to get a taxonomic classification.
 
-## Usage {#search-usage}
-
-```{r}
-library(taxize)
-```
-
 ## get functions
 
 There's a family of functions, each targeted at a specific data source, for getting taxonomic identifiers from names. They all start with the prefix `get_`, and end with an abbreviation for the data source. They are:

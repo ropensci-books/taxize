@@ -1,0 +1,43 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Classification {#classification}
+
+The `classification()` function is one of the workhorses of the `taxize` package. 
+
+A taxonomic classification - or hierarchy - is a fundamental set of information about any taxon. Biological taxonomy is arranged in a hierarchical fashion, with each species taxon name fitting into genera, and genera fitting into families, and so on all the way up to just a few categories of very high level organization. 
+
+## Usage {#classification-usage}
+
+```{r}
+library(taxize)
+```
+
+
+`classification()` has a number of high level features:
+
+* It is vectorized. That is, it accepts any number of inputs and the output length should equal the input length
+* It accepts various inputs:
+    * Taxonomic names as character strings
+    * Taxonomic identifiers as character stings or numeric values
+    * Any output of the various `get_*()` functions
+* When there is data available, it always returns a data.frame, facilitating use downstream
+
+
+## Other sections?
+
+asdfadfasdf
+
+## Related {#classification-related}
+
+Related functions include (note to self: link to these sections when available): 
+
+* `children`
+* `downstream`
+* `upstream`
+* `lowest_common`

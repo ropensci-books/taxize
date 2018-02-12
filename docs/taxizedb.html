@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="data-sources.html">
-<link rel="next" href="identifiers.html">
+<link rel="prev" href="classification.html">
+<link rel="next" href="contribuors.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -174,40 +174,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="authentication" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Authentication</h1>
-<p>Some data sources in <code>taxize</code> require authentication. Here’s a breakdown of which ones require authentication, and how to do authentication by data source:</p>
-<ul>
-<li><strong>Tropicos</strong>: Request a Tropicos API key from <a href="http://services.tropicos.org/help?requestkey" class="uri">http://services.tropicos.org/help?requestkey</a></li>
-<li><strong>EOL</strong>: EOL requires an API key. You can pass in your EOL api
-key in the function call like <code>sci2comm('Helianthus annuus', key=&quot;&lt;your eol api key&gt;&quot;)</code>. You can also store your EOL API key in your .Rprofile file as <code>options(EOL_KEY = &quot;&lt;your eol api key&gt;&quot;)</code>, or just for the current session by running <code>options(EOL_KEY = &quot;&lt;your eol api key&gt;&quot;)</code> in the console.</li>
-<li><strong>NCBI Entrez</strong>: From NCBI’s docs: “E-utils users are allowed 3 requests/second without an
-API key. Create an API key (in your account at
-<a href="https://www.ncbi.nlm.nih.gov/account/" class="uri">https://www.ncbi.nlm.nih.gov/account/</a>) to increase your e-utils limit to 10
-requests/second. Contact our help department (<a href="mailto:eutilities@ncbi.nlm.nih.gov">eutilities@ncbi.nlm.nih.gov</a>)
-if you need higher throughput. Only one API Key per user. Replacing or
-deleting will inactivate the current key. Refer to documentation
-(<a href="https://www.ncbi.nlm.nih.gov/books/NBK25497/" class="uri">https://www.ncbi.nlm.nih.gov/books/NBK25497/</a>) for more.”</li>
-<li><strong>IUCN</strong>: IUCN requires an API key. Request an API key at <a href="http://apiv3.iucnredlist.org/api/v3/token" class="uri">http://apiv3.iucnredlist.org/api/v3/token</a></li>
-</ul>
-<p>Save your API keys as the following names either as R options or environment variables:</p>
-<ul>
-<li>Tropicos: ‘TROPICOS_KEY’</li>
-<li>EOL: ‘EOL_KEY’</li>
-<li>IUCN: ‘IUCN_REDLIST_KEY’</li>
-<li>ENTREZ: ‘ENTREZ_KEY’</li>
-</ul>
-<p>We’ll read in your keys if we can find them in either R options or environment variables. See <code>?Startup</code> in R for details on how to store R options or environment variables.</p>
-<p>We encourage users to use environment variables rather than R options because they are more standard across programming languages and computing environments.</p>
+<div id="taxizedb" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> taxizedb</h1>
+<p><a href="http://github.com/ropenscilabs/taxizedb">taxizedb</a> arose out of a few things. First, some of the data sources used in <code>taxize</code> also provide complete dumps of all their data, usually as SQL databases. Second, when a user has a lot of operations to do, <code>taxize</code> can leave the user feeling like there could be a faster solution. That thing is <code>taxizedb</code>.</p>
+<div id="other-sections-1" class="section level2">
+<h2><span class="header-section-number">7.1</span> other sections</h2>
+<p>…</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-sources.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="identifiers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="classification.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="contribuors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -236,7 +218,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/taxize-book/edit/master/03-authentication.Rmd",
+"link": "https://github.com/ropensci/taxize-book/edit/master/12-taxizedb.Rmd",
 "text": "Edit"
 },
 "download": ["_main.pdf", "_main.epub"],

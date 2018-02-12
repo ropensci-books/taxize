@@ -1,0 +1,17 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# taxizedb {#taxizedb}
+
+[taxizedb][] arose out of a few things. First, some of the data sources used in `taxize` also provide complete dumps of all their data, usually as SQL databases. Second, when a user has a lot of operations to do, `taxize` can leave the user feeling like there could be a faster solution. That thing is `taxizedb`. 
+
+## other sections 
+
+...
+
+[taxizedb]: http://github.com/ropenscilabs/taxizedb
