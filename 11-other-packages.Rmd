@@ -1,0 +1,59 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Other packages {#other-packages}
+
+There's a number of packages that `taxize` builds on:
+
+* bold
+* rredlist
+* rotl
+* ritis
+* worrms
+* natserv
+* wikitaxa
+
+## package: bold {#package-bold}
+
+The [bold][] package interfaces with [BOLD Systems](http://boldsystems.org/) which hosts barcoding data, and includes taxonomic information.
+
+
+## package: rredlist {#package-rredlist}
+
+The [rredlist][] package interfaces with [IUCN Red List of Threatened Species](http://www.iucnredlist.org/). They have various kinds of data around the life history of the various threatneed species, including taxonomic information. 
+
+
+## package: rotl {#package-rotl}
+
+The [rotl][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+## package: ritis {#package-ritis}
+
+The [ritis][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+## package: worrms {#package-worrms}
+
+The [worrms][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+## package: natserv {#package-natserv}
+
+The [natserv][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+
+## package: wikitaxa {#package-wikitaxa}
+
+The [wikitaxa][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+
+[bold]: https://github.com/ropensci/bold
+[rredlist]: https://github.com/ropensci/rredlist
+[rotl]: https://github.com/ropensci/rotl
+[ritis]: https://github.com/ropensci/ritis
+[worrms]: https://github.com/ropensci/worrms
+[natserv]: https://github.com/ropensci/natserv
+[wikitaxa]: https://github.com/ropensci/wikitaxa
