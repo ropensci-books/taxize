@@ -9,7 +9,7 @@ The use cases currently covered in `taxize`:
 * Taxonomic identifier from a taxonomic name
 * Taxonomic name from a taxonomic identifier
 * Taxonomic name from a vernacular name
-* Vernaculr name from a taxonomic name
+* Vernacular name from a taxonomic name
 * Taxonomic hierarchy/classification from identifier or name
 * Children of an identifier or name
 * Immediate names above an identifier or name
