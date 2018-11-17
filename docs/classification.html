@@ -65,7 +65,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -187,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A taxonomic classification - or hierarchy - is a fundamental set of information about any taxon. Biological taxonomy is arranged in a hierarchical fashion, with each species taxon name fitting into genera, and genera fitting into families, and so on all the way up to just a few categories of very high level organization.</p>
 <div id="classification-usage" class="section level2">
 <h2><span class="header-section-number">6.1</span> Usage</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(taxize)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">library</span>(taxize)</a></code></pre></div>
 <p><code>classification()</code> has a number of high level features:</p>
 <ul>
 <li>It is vectorized. That is, it accepts any number of inputs and the output length should equal the input length</li>

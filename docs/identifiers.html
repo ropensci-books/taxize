@@ -65,7 +65,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -218,17 +218,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>uri: the URI/URL for the taxon</li>
 </ul>
 <p>An example return from a <code>get_*</code> function:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">[<span class="dv">1</span>] <span class="st">&quot;50157568&quot;</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">attr</span>(,<span class="st">&quot;class&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">[<span class="dv">1</span>] <span class="st">&quot;tpsid&quot;</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">attr</span>(,<span class="st">&quot;match&quot;</span>)</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">[<span class="dv">1</span>] <span class="st">&quot;found&quot;</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">attr</span>(,<span class="st">&quot;multiple_matches&quot;</span>)</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">[<span class="dv">1</span>] <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">attr</span>(,<span class="st">&quot;pattern_match&quot;</span>)</a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">[<span class="dv">1</span>] <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="kw">attr</span>(,<span class="st">&quot;uri&quot;</span>)</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">[<span class="dv">1</span>] <span class="st">&quot;http://tropicos.org/Name/50157568&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">[<span class="dv">1</span>] <span class="st">&quot;50157568&quot;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">attr</span>(,<span class="st">&quot;class&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3">[<span class="dv">1</span>] <span class="st">&quot;tpsid&quot;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">attr</span>(,<span class="st">&quot;match&quot;</span>)</a>
+<a class="sourceLine" id="cb4-5" title="5">[<span class="dv">1</span>] <span class="st">&quot;found&quot;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">attr</span>(,<span class="st">&quot;multiple_matches&quot;</span>)</a>
+<a class="sourceLine" id="cb4-7" title="7">[<span class="dv">1</span>] <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="kw">attr</span>(,<span class="st">&quot;pattern_match&quot;</span>)</a>
+<a class="sourceLine" id="cb4-9" title="9">[<span class="dv">1</span>] <span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw">attr</span>(,<span class="st">&quot;uri&quot;</span>)</a>
+<a class="sourceLine" id="cb4-11" title="11">[<span class="dv">1</span>] <span class="st">&quot;http://tropicos.org/Name/50157568&quot;</span></a></code></pre></div>
 </div>
 <div id="identifier-notes" class="section level2">
 <h2><span class="header-section-number">5.3</span> identifier notes</h2>
@@ -242,8 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.4</span> Looking up taxa on the web</h2>
 <p>If you want to look up the taxon page for any taxa that you’ve passed through <code>get_*</code> functions you can do so by using the <code>uri</code> returned from the function.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">get_tsn</span>(<span class="st">&#39;Pinus contorta&#39;</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">browseURL</span>(<span class="kw">attr</span>(x, <span class="st">&#39;uri&#39;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">x &lt;-<span class="st"> </span><span class="kw">get_tsn</span>(<span class="st">&#39;Pinus contorta&#39;</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">browseURL</span>(<span class="kw">attr</span>(x, <span class="st">&#39;uri&#39;</span>))</a></code></pre></div>
 
 </div>
 </div>
