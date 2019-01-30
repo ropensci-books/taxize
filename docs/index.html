@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>taxize book</title>
   <meta name="description" content="taxize manual">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="taxize book" />
   <meta property="og:type" content="book" />
@@ -34,6 +34,7 @@
 <link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -65,7 +66,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -183,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">taxize book</h1>
-<h4 class="date"><em>built on 2018-11-16 - for taxize v0.9.4.9212</em></h4>
+<p class="date"><em>built on 2019-01-30 - for taxize v0.9.5</em></p>
 </div>
 <div id="taxize-manual" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> taxize manual</h1>
@@ -212,7 +213,7 @@ and retrieval in R. F1000Research, 2:191. URL:
 <p>Scott Chamberlain, Eduard Szoecs, Zachary Foster, Zebulun Arendsee,
 Carl Boettiger, Karthik Ram, Ignasi Bartomeus, John Baumgartner,
 James O’Donnell, Jari Oksanen, Bastian Greshake Tzovaras,
-Philippe Marchand, Vinh Tran, Maëlle Salmon, and Gaopeng Li. (2018)
+Philippe Marchand, Vinh Tran, Maëlle Salmon, and Gaopeng Li. (2019)
 taxize: Taxonomic information from around the web.
 R package version 0.9.5. <a href="https://github.com/ropensci/taxize" class="uri">https://github.com/ropensci/taxize</a></p>
 </blockquote>
@@ -220,11 +221,11 @@ R package version 0.9.5. <a href="https://github.com/ropensci/taxize" class="uri
 <div id="installation" class="section level2">
 <h2><span class="header-section-number">1.3</span> Installation</h2>
 <p>Stable version from CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;taxize&quot;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;taxize&quot;</span>)</code></pre>
 <p>Development version from GitHub</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;ropensci/taxize&quot;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;ropensci/taxize&quot;</span>)</code></pre>
 <p>Load library</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(<span class="st">&#39;taxize&#39;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;taxize&#39;</span>)</code></pre>
 
 </div>
 </div>
@@ -254,7 +255,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -266,6 +267,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/ropensci/taxize-book/edit/master/index.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["_main.pdf", "_main.epub"],
 "toc": {
