@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Identifiers | taxize book</title>
-  <meta name="description" content="taxize manual">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="taxize manual" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Identifiers | taxize book" />
   <meta property="og:type" content="book" />
@@ -25,9 +24,9 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="authentication.html">
@@ -54,7 +53,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -189,21 +187,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> get functions</h2>
 <p>There’s a family of functions, each targeted at a specific data source, for getting taxonomic identifiers from names. They all start with the prefix <code>get_</code>, and end with an abbreviation for the data source. They are:</p>
 <ul>
-<li><code>get_nbnid</code></li>
-<li><code>get_eolid</code></li>
-<li><code>get_colid</code></li>
-<li><code>get_iucn</code></li>
-<li><code>get_tolid</code></li>
-<li><code>get_tsn</code></li>
-<li><code>get_gbifid</code></li>
-<li><code>get_ubioid</code></li>
-<li><code>get_uid</code></li>
 <li><code>get_wiki</code></li>
+<li><code>get_gbifid</code></li>
+<li><code>get_iucn</code></li>
 <li><code>get_natservid</code></li>
-<li><code>get_tpsid</code></li>
-<li><code>get_wormsid</code></li>
+<li><code>get_colid</code></li>
 <li><code>get_boldid</code></li>
+<li><code>get_nbnid</code></li>
+<li><code>get_tsn</code></li>
+<li><code>get_wormsid</code></li>
 <li><code>get_ids</code></li>
+<li><code>get_pow</code></li>
+<li><code>get_uid</code></li>
+<li><code>get_ubioid</code></li>
+<li><code>get_tolid</code></li>
+<li><code>get_tpsid</code></li>
+<li><code>get_eolid</code></li>
 </ul>
 <p>Another set of related functions with a trailing underscore (e.g., <code>get_uid_()</code>) are available for all data sources, but they do not do interactive usage, but instead provide all data.</p>
 </div>
@@ -219,17 +218,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>uri: the URI/URL for the taxon</li>
 </ul>
 <p>An example return from a <code>get_*</code> function:</p>
-<pre class="sourceCode r"><code class="sourceCode r">[<span class="dv">1</span>] <span class="st">&quot;50157568&quot;</span>
-<span class="kw">attr</span>(,<span class="st">&quot;class&quot;</span>)
-[<span class="dv">1</span>] <span class="st">&quot;tpsid&quot;</span>
-<span class="kw">attr</span>(,<span class="st">&quot;match&quot;</span>)
-[<span class="dv">1</span>] <span class="st">&quot;found&quot;</span>
-<span class="kw">attr</span>(,<span class="st">&quot;multiple_matches&quot;</span>)
-[<span class="dv">1</span>] <span class="ot">TRUE</span>
-<span class="kw">attr</span>(,<span class="st">&quot;pattern_match&quot;</span>)
-[<span class="dv">1</span>] <span class="ot">FALSE</span>
-<span class="kw">attr</span>(,<span class="st">&quot;uri&quot;</span>)
-[<span class="dv">1</span>] <span class="st">&quot;http://tropicos.org/Name/50157568&quot;</span></code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">[<span class="dv">1</span>] <span class="st">&quot;50157568&quot;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">attr</span>(,<span class="st">&quot;class&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">[<span class="dv">1</span>] <span class="st">&quot;tpsid&quot;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">attr</span>(,<span class="st">&quot;match&quot;</span>)</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">[<span class="dv">1</span>] <span class="st">&quot;found&quot;</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">attr</span>(,<span class="st">&quot;multiple_matches&quot;</span>)</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">[<span class="dv">1</span>] <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">attr</span>(,<span class="st">&quot;pattern_match&quot;</span>)</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">[<span class="dv">1</span>] <span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="kw">attr</span>(,<span class="st">&quot;uri&quot;</span>)</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">[<span class="dv">1</span>] <span class="st">&quot;http://tropicos.org/Name/50157568&quot;</span></a></code></pre></div>
 </div>
 <div id="identifier-notes" class="section level2">
 <h2><span class="header-section-number">5.3</span> identifier notes</h2>
@@ -243,8 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.4</span> Looking up taxa on the web</h2>
 <p>If you want to look up the taxon page for any taxa that you’ve passed through <code>get_*</code> functions you can do so by using the <code>uri</code> returned from the function.</p>
 <p>For example:</p>
-<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">get_tsn</span>(<span class="st">&#39;Pinus contorta&#39;</span>)
-<span class="kw">browseURL</span>(<span class="kw">attr</span>(x, <span class="st">&#39;uri&#39;</span>))</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">get_tsn</span>(<span class="st">&#39;Pinus contorta&#39;</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">browseURL</span>(<span class="kw">attr</span>(x, <span class="st">&#39;uri&#39;</span>))</a></code></pre></div>
 
 </div>
 </div>
