@@ -4,7 +4,7 @@
 
 `taxize` is designed around making certain use cases easier - abstracting away the details of what each taxonomic data source requires for that use case. 
 
-The use cases currently covered in `taxize`:
+Some of the use cases covered in `taxize`:
 
 * Taxonomic identifier from a taxonomic name
 * Taxonomic name from a taxonomic identifier
@@ -18,3 +18,7 @@ The use cases currently covered in `taxize`:
 * Lowest common taxon and rank for an identifier or name
 * Resolve taxonomic names, i.e., fix spelling errors
 * Make a taxonomic tree from identifiers or names
+
+## Related tools
+
+For other related packages see [Other packages](#other-packages)

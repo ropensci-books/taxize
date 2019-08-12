@@ -32,12 +32,13 @@ scientific to common names and vice versa, and more.
 > and retrieval in R. F1000Research, 2:191. URL:
 > http://f1000research.com/articles/2-191/v2.
 
-> Scott Chamberlain, Eduard Szoecs, Zachary Foster, Zebulun Arendsee, 
-> Carl Boettiger, Karthik Ram, Ignasi Bartomeus, John Baumgartner, 
-> James O'Donnell, Jari Oksanen, Bastian Greshake Tzovaras, 
-> Philippe Marchand, Vinh Tran, Maëlle Salmon, and Gaopeng Li. (2019) 
-> taxize: Taxonomic information from around the web. 
-> R package version 0.9.5. https://github.com/ropensci/taxize
+> Scott Chamberlain, Eduard Szoecs, Zachary Foster, Zebulun Arendsee,
+> Carl Boettiger, Karthik Ram, Ignasi Bartomeus, John Baumgartner,
+> James O'Donnell, Jari Oksanen, Bastian Greshake Tzovaras,
+> Philippe Marchand, Vinh Tran, Maëlle Salmon, Gaopeng Li,
+> and Matthias Grenié. (2019) taxize: Taxonomic information from
+> around the web. R package version 0.9.8.
+> https://github.com/ropensci/taxize
 
 ## Installation
 

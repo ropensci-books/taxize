@@ -9,7 +9,10 @@ knitr::opts_chunk$set(
 
 # Data sources {#data-sources}
 
-Data sources in `taxize` include:
+Data sources in `taxize` are presented below.
+
+Note that data sources in taxize may change through time as data sources
+go away and new ones become available.
 
 
 <table>
