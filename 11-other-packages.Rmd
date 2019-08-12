@@ -8,6 +8,8 @@ knitr::opts_chunk$set(
 
 # Other packages {#other-packages}
 
+## taxize built on {#taxize-built-on}
+
 There's a number of packages that `taxize` builds on:
 
 * bold
@@ -18,36 +20,50 @@ There's a number of packages that `taxize` builds on:
 * natserv
 * wikitaxa
 
-## package: bold {#package-bold}
+### package: bold {#package-bold}
 
-The [bold][] package interfaces with [BOLD Systems](http://boldsystems.org/) which hosts barcoding data, and includes taxonomic information.
-
-
-## package: rredlist {#package-rredlist}
-
-The [rredlist][] package interfaces with [IUCN Red List of Threatened Species](http://www.iucnredlist.org/). They have various kinds of data around the life history of the various threatneed species, including taxonomic information. 
+The [bold][] package interfaces with [BOLD Systems](http://boldsystems.org/) which hosts
+barcoding data, and includes taxonomic information.
 
 
-## package: rotl {#package-rotl}
+### package: rredlist {#package-rredlist}
 
-The [rotl][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+The [rredlist][] package interfaces with [IUCN Red List of Threatened Species](http://www.iucnredlist.org/).
+They have various kinds of data around the life history of the various threatneed
+species, including taxonomic information. 
 
-## package: ritis {#package-ritis}
 
-The [ritis][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+### package: rotl {#package-rotl}
 
-## package: worrms {#package-worrms}
+The [rotl][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
+curating an open phylogenetic tree of all life.  
 
-The [worrms][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+### package: ritis {#package-ritis}
 
-## package: natserv {#package-natserv}
+The [ritis][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
+curating an open phylogenetic tree of all life.  
+
+### package: worrms {#package-worrms}
+
+The [worrms][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
+curating an open phylogenetic tree of all life.  
+
+### package: natserv {#package-natserv}
 
 The [natserv][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
 
 
-## package: wikitaxa {#package-wikitaxa}
+### package: wikitaxa {#package-wikitaxa}
 
 The [wikitaxa][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+
+
+## related packages {#related-packages}
+
+* [taxizesoap][] is no longer maintained. It was maintained for a number of years,
+with functionality for handling web services that used the [SOAP protocol][soap],
+an older web service protocol that has been largeley replaced with other protocols.
+Most if not all data sources that were in taxizesoap have been moved to taxize.
 
 
 [bold]: https://github.com/ropensci/bold
@@ -57,3 +73,5 @@ The [wikitaxa][] package interfaces with the [Open Tree of Life](https://tree.op
 [worrms]: https://github.com/ropensci/worrms
 [natserv]: https://github.com/ropensci/natserv
 [wikitaxa]: https://github.com/ropensci/wikitaxa
+[taxizesoap]: https://github.com/ropensci/taxizesoap
+[soap]: https://en.wikipedia.org/wiki/SOAP
