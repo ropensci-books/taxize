@@ -20,6 +20,10 @@ There's a number of packages that `taxize` builds on:
 * natserv
 * wikitaxa
 
+You can use these packages individually if you're only interesting
+in the data from that data source. Furthermore, each of these packages
+has more functionality for dealing with that specific data source.
+
 ### package: bold {#package-bold}
 
 The [bold][] package interfaces with [BOLD Systems](http://boldsystems.org/) which hosts
@@ -30,37 +34,41 @@ barcoding data, and includes taxonomic information.
 
 The [rredlist][] package interfaces with [IUCN Red List of Threatened Species](http://www.iucnredlist.org/).
 They have various kinds of data around the life history of the various threatneed
-species, including taxonomic information. 
+species, including taxonomic information.
 
 
 ### package: rotl {#package-rotl}
 
 The [rotl][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
-curating an open phylogenetic tree of all life.  
+curating an open phylogenetic tree of all life.
 
 ### package: ritis {#package-ritis}
 
-The [ritis][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
-curating an open phylogenetic tree of all life.  
+The [ritis][] package interfaces with the
+[Integrated Taxonomic Information Service](https://www.itis.gov/), taxonomic information on plants,
+animals, fungi, and microbes of North America and the world.
 
 ### package: worrms {#package-worrms}
 
-The [worrms][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/),
-curating an open phylogenetic tree of all life.  
+The [worrms][] package interfaces with the [World Register of Marine Species](http://www.marinespecies.org/),
+an authoritative classifcation and catalogue of marine names.
 
 ### package: natserv {#package-natserv}
 
-The [natserv][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+The [natserv][] package interfaces with the [NatureServe](https://services.natureserve.org/),
+a biodiversity database.
 
 
 ### package: wikitaxa {#package-wikitaxa}
 
-The [wikitaxa][] package interfaces with the [Open Tree of Life](https://tree.opentreeoflife.org/), curating an open phylogenetic tree of all life.  
+The [wikitaxa][] package interfaces with [Wikispecies](https://species.wikimedia.org/wiki/Main_Page),
+[Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page), and [Wikipedia](https://www.wikipedia.org/),
+facilitating extraction of taxonomic name information from each site.
 
 
 ## related packages {#related-packages}
 
-* [taxizesoap][] is no longer maintained. It was maintained for a number of years,
+[taxizesoap][] is no longer maintained. It was maintained for a number of years,
 with functionality for handling web services that used the [SOAP protocol][soap],
 an older web service protocol that has been largeley replaced with other protocols.
 Most if not all data sources that were in taxizesoap have been moved to taxize.
