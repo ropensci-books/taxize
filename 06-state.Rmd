@@ -1,0 +1,64 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Progress and state {#progress-state}
+
+In `taxize` `v0.9.8` a new set of features was introduced to keep
+track of progress of going through each name passed to `get_*()` functions,
+better messages about progress and better summary info, and the ability
+to restart from where you left off if a `get_*()` function gets interrupted.
+
+## Progress {#progress}
+
+Within each `get_*()` function we keep track of progress. We do this
+using the `progressor` R6 class, an internal `taxize` class. `progessor`
+is not meant to be used by the taxize user. Within each `get_*()` function
+we initiate a new progress object:
+
+```r
+prog <- progressor$new(...)
+```
+
+As the `get_*()` function progresses the `prog` object is updated with
+data and metadata as each name is gone through in the for loop. In addition,
+`prog` handles nice print statements and summary info, which can
+also be suppressed as needed.
+
+`progressor` is not exported but when you have `taxize` loaded you
+can go to its manual file (`?progressor`) to dig into how it works.
+
+`taxize_options()` is a new function in `taxize`, introduced in `v.0.9.8`.
+It is meant to manage package wide options in general. The first option it
+has is `taxon_state_messages`, which is a boolean (default: `TRUE`) which
+controls messages printed by `progressor` - you can set
+`taxon_state_messages=FALSE` if you want to suppress messages from
+`progressor`.
+
+## State {#state}
+
+The first parameter of every `get_*()` function now accepts either one or
+more taxonomic names _OR_ a `taxon_state` object. A `taxon_state` object is
+an R6 object that helps keep track of where you are in a `get_*()` function
+call. The TLDR is that it means if you're `get_*()` function gets interrupted
+because of any number of things (e.g., internet goes out, the dreaded curl
+timeout, you hit the wrong key, the remote data provider temporarily goes down)
+you can call `taxon_last()` and pass that in to your `get_*()` function to
+start from where you left off before the interruption.
+
+```{r}
+spp <- names_list("species", 3)
+res <- get_gbifid(spp)
+z <- taxon_last()
+z
+z$taxa_remaining()
+z$taxa_completed()
+z$count # active binding; no parens needed
+```
+
+See `?taxon_state` with `taxize` loaded to get all the details on working
+with taxon state objects.

@@ -8,23 +8,41 @@ knitr::opts_chunk$set(
 
 # Identifiers {#identifiers}
 
-Taxonomic identifiers are a central concept in `taxize` - and around which many things depend on. We often either need to get to an identifier for each name the user has, or take an identifier to do something else, for example to get a taxonomic classification.
+Taxonomic identifiers are a central concept in `taxize` - and around which
+many things depend on. We often either need to get to an identifier for each
+name in question, or take an identifier to do something else, for example
+get a taxonomic classification.
+
+(_Note_: See [Progress and state](#progress-state) for details on keeping track
+of progress maintaining state in `get_` functions, and functions that use
+`get_` functions under the hood.)
 
 ## get functions
 
-There's a family of functions, each targeted at a specific data source, for getting taxonomic identifiers from names. They all start with the prefix `get_`, and end with an abbreviation for the data source. They are:
+There's a family of functions, each targeted at a specific data source, for
+getting taxonomic identifiers from names. They all start with the prefix
+`get_`, and end with an abbreviation for the data source. They are:
 
 ```{r echo=FALSE, comment=NA, results='asis'}
 cat(paste(" -", paste(sprintf("`%s`", grep("get_genes|get_seqs", grep("get_[A-Za-z]+$", getNamespaceExports("taxize"), value = TRUE), value = TRUE, invert=TRUE)), collapse = "\n - ")))
 ```
 
-Another set of related functions with a trailing underscore (e.g., `get_uid_()`) are available for all data sources, but they do not do interactive usage, but instead provide all data.
+Another set of related functions with a trailing underscore (e.g., `get_uid_()`) are
+available for all data sources, but they do not do interactive usage, but instead
+provide all data. That is, if you use e.g., `get_tsn()` and there is more than
+one option returned from ITIS, you will be given a prompt which will require
+your input. If you want to avoid potential prompts, use `get_tsn_()` instead,
+and then manipulate/filter data yourself.
 
 ## get functions return objects
 
-The returned data from `get_*` functions is either an `NA` if no match, or a character string or numeric if a match. The length can be greater than one as all the functions are vectorized.
+The returned data from `get_*` functions is either an `NA_character_` if no match,
+or a character string or numeric (some data providers use numeric taxonomic
+identifiers, while others use alphanumeric identifiers) if a match. The length can
+be greater than one as all the functions are vectorized.
 
-There are a number of attributes attached to the output, where each attributes length equals the length of the id vector:
+There are a number of attributes attached to the output, where each attributes
+length equals the length of the id vector:
 
 * class: the class of the object
 * match: whether a match was found or not
@@ -50,13 +68,25 @@ attr(,"uri")
 
 ## identifier notes
 
-* Taxonomic identifiers are unique to the data source. That is, the taxonomic ID for any individual taxon in data source A is different from that in data source B, and different from that in data source C, etc. For example, the taxonomic ID for _Pinus contorta_ in NCBI is `3339`, the ID in ITIS is `183327`, and the ID in COL is `13c40c3f2be0b0965bddf948d2b3115f`.
-* Taxonomic identifiers vary among data sources in their structure. That is, some are numeric (only numbers), some are alphanumeric (combination of numbers and letters), and one has an odd structure with letters, numbers and symbols (Nature Serve, e.g., `ELEMENT_GLOBAL.2.147775`). Most data sources provide numeric identifiers. Wikipedia is unusual in that there are no numeric/alphanumeric/etc. taxonomic identifiers for each name - instead they use an "identifier" that is the name.
+* Taxonomic identifiers are unique to the data source. That is, the taxonomic
+ID for any individual taxon in data source A is different from that in data
+source B, and different from that in data source C, etc. For example, the
+taxonomic ID for _Pinus contorta_ in NCBI is `3339`, the ID in ITIS is
+`183327`, and the ID in COL is `13c40c3f2be0b0965bddf948d2b3115f`.
+* Taxonomic identifiers vary among data sources in their structure. That is,
+some are numeric (only numbers), some are alphanumeric (combination of numbers
+and letters), and one has an odd structure with letters, numbers and symbols
+(Nature Serve, e.g., `ELEMENT_GLOBAL.2.147775`). Most data sources provide
+numeric identifiers. Wikipedia is unusual in that there are no
+numeric/alphanumeric/etc. taxonomic identifiers for each name - instead, the
+"identifier" __IS__ the name.
 * ...
 
 ## Looking up taxa on the web
 
-If you want to look up the taxon page for any taxa that you've passed through `get_*` functions you can do so by using the `uri` returned from the function. 
+If you want to look up the taxon page for any taxa that you've passed through
+`get_*` functions you can do so by using the `uri` attributes returned from
+the function.
 
 For example:
 
