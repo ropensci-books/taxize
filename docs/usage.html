@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Usage | taxize book</title>
+  <meta name="description" content="taxize manual" />
+  <meta name="generator" content="bookdown 0.12.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Usage | taxize book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="taxize manual" />
+  <meta name="github-repo" content="ropensci/taxize-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Usage | taxize book" />
+  
+  <meta name="twitter:description" content="taxize manual" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="taxizedb.html"/>
+<link rel="next" href="contributing.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">taxize book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> taxize manual</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#info"><i class="fa fa-check"></i><b>1.1</b> Info</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citing-taxize"><i class="fa fa-check"></i><b>1.2</b> Citing taxize</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.3</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#user-interface"><i class="fa fa-check"></i><b>2.1</b> User interface</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#related-tools"><i class="fa fa-check"></i><b>2.2</b> Related tools</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Data sources</a></li>
+<li class="chapter" data-level="4" data-path="authentication.html"><a href="authentication.html"><i class="fa fa-check"></i><b>4</b> Authentication</a></li>
+<li class="chapter" data-level="5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>5</b> Identifiers</a><ul>
+<li class="chapter" data-level="5.1" data-path="identifiers.html"><a href="identifiers.html#get-functions"><i class="fa fa-check"></i><b>5.1</b> get functions</a></li>
+<li class="chapter" data-level="5.2" data-path="identifiers.html"><a href="identifiers.html#get-functions-return-objects"><i class="fa fa-check"></i><b>5.2</b> get functions return objects</a></li>
+<li class="chapter" data-level="5.3" data-path="identifiers.html"><a href="identifiers.html#identifier-notes"><i class="fa fa-check"></i><b>5.3</b> identifier notes</a></li>
+<li class="chapter" data-level="5.4" data-path="identifiers.html"><a href="identifiers.html#looking-up-taxa-on-the-web"><i class="fa fa-check"></i><b>5.4</b> Looking up taxa on the web</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>6</b> Classification</a><ul>
+<li class="chapter" data-level="6.1" data-path="classification.html"><a href="classification.html#classification-usage"><i class="fa fa-check"></i><b>6.1</b> Usage</a></li>
+<li class="chapter" data-level="6.2" data-path="classification.html"><a href="classification.html#other-sections"><i class="fa fa-check"></i><b>6.2</b> Other sections?</a></li>
+<li class="chapter" data-level="6.3" data-path="classification.html"><a href="classification.html#classification-related"><i class="fa fa-check"></i><b>6.3</b> Related</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="progress-state.html"><a href="progress-state.html"><i class="fa fa-check"></i><b>7</b> Progress and state</a><ul>
+<li class="chapter" data-level="7.1" data-path="progress-state.html"><a href="progress-state.html#progress"><i class="fa fa-check"></i><b>7.1</b> Progress</a></li>
+<li class="chapter" data-level="7.2" data-path="progress-state.html"><a href="progress-state.html#state"><i class="fa fa-check"></i><b>7.2</b> State</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>8</b> Other packages</a><ul>
+<li class="chapter" data-level="8.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>8.1</b> packages taxize leverages</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="other-packages.html"><a href="other-packages.html#package-bold"><i class="fa fa-check"></i><b>8.1.1</b> package: bold</a></li>
+<li class="chapter" data-level="8.1.2" data-path="other-packages.html"><a href="other-packages.html#package-rredlist"><i class="fa fa-check"></i><b>8.1.2</b> package: rredlist</a></li>
+<li class="chapter" data-level="8.1.3" data-path="other-packages.html"><a href="other-packages.html#package-rotl"><i class="fa fa-check"></i><b>8.1.3</b> package: rotl</a></li>
+<li class="chapter" data-level="8.1.4" data-path="other-packages.html"><a href="other-packages.html#package-ritis"><i class="fa fa-check"></i><b>8.1.4</b> package: ritis</a></li>
+<li class="chapter" data-level="8.1.5" data-path="other-packages.html"><a href="other-packages.html#package-worrms"><i class="fa fa-check"></i><b>8.1.5</b> package: worrms</a></li>
+<li class="chapter" data-level="8.1.6" data-path="other-packages.html"><a href="other-packages.html#package-natserv"><i class="fa fa-check"></i><b>8.1.6</b> package: natserv</a></li>
+<li class="chapter" data-level="8.1.7" data-path="other-packages.html"><a href="other-packages.html#package-wikitaxa"><i class="fa fa-check"></i><b>8.1.7</b> package: wikitaxa</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="other-packages.html"><a href="other-packages.html#related-packages"><i class="fa fa-check"></i><b>8.2</b> related packages</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>9</b> taxizedb</a><ul>
+<li class="chapter" data-level="9.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>9.1</b> other sections</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>10</b> Usage</a><ul>
+<li class="chapter" data-level="10.1" data-path="usage.html"><a href="usage.html#taxize-citations"><i class="fa fa-check"></i><b>10.1</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>11</b> Contributing</a><ul>
+<li class="chapter" data-level="11.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>11.1</b> Contributing to this book</a></li>
+<li class="chapter" data-level="11.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>11.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>11.2.1</b> Bugs?</a></li>
+<li class="chapter" data-level="11.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>11.2.2</b> Code contributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>12</b> session info</a></li>
+<li class="divider"></li>
+<li>(c) Scott Chamberlain, 2019</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">taxize book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="usage" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Usage</h1>
+<div id="taxize-citations" class="section level2">
+<h2><span class="header-section-number">10.1</span> Citations</h2>
+<p>There’s currently 104 <code>taxize</code> citations.</p>
+<ul>
+<li>Da Silva, R., Pearce Kelly, P., Zimmerman, B., Knott, M., Foden, W., &amp; Conde, D. A. (2018). Assessing the Conservation Potential of Fish and Corals in Aquariums Globally. Journal for Nature Conservation. <a href="https://doi.org/10.1016/j.jnc.2018.12.001" class="uri">https://doi.org/10.1016/j.jnc.2018.12.001</a></li>
+<li>Da Silva, R., &amp; Conde, D. A. (2018). Data on the conservation potential of fish and coral populations in aquariums. Data in Brief. <a href="https://doi.org/10.1016/j.dib.2018.12.083" class="uri">https://doi.org/10.1016/j.dib.2018.12.083</a></li>
+<li>Sclavi, B., &amp; Herrick, J. (2018). Genome size variation and species diversity in salamanders. Journal of Evolutionary Biology. <a href="https://doi.org/10.1111/jeb.13412" class="uri">https://doi.org/10.1111/jeb.13412</a></li>
+<li>Muñoz, G., Trøjelsgaard, K., &amp; Kissling, W. D. (2019). A synthesis of animal-mediated seed dispersal of palms reveals distinct biogeographical differences in species interactions. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.13493" class="uri">https://doi.org/10.1111/jbi.13493</a></li>
+<li>Muñoz, G., Kissling, W. D., &amp; van Loon, E. E. (2019). Biodiversity Observations Miner: A web application to unlock primary biodiversity data from published literature. Biodiversity Data Journal, 7. <a href="https://doi.org/10.3897/bdj.7.e28737" class="uri">https://doi.org/10.3897/bdj.7.e28737</a></li>
+<li>Smith, T. P., Thomas, T. J., Garcia-Carreras, B., Sal, S., Yvon-Durocher, G., Bell, T., &amp; Pawar, S. (2019). Metabolic rates of prokaryotic microbes may inevitably rise with global warming. bioRxiv, 524264. <a href="https://doi.org/10.1101/524264" class="uri">https://doi.org/10.1101/524264</a></li>
+<li>Srivastava, S., Avvaru, A. K., Sowpati, D. T., &amp; Mishra, R. K. (2019). Patterns of microsatellite distribution across eukaryotic genomes. BMC Genomics, 20(1). <a href="https://doi.org/10.1186/s12864-019-5516-5" class="uri">https://doi.org/10.1186/s12864-019-5516-5</a></li>
+<li>Thomsen, P. F., &amp; Sigsgaard, E. E. (2019). Environmental DNA metabarcoding of wild flowers reveals diverse communities of terrestrial arthropods. Ecology and Evolution. <a href="https://doi.org/10.1002/ece3.4809" class="uri">https://doi.org/10.1002/ece3.4809</a></li>
+<li>König, C., Weigelt, P., Schrader, J., Taylor, A., Kattge, J., &amp; Kreft, H. (2019). Biodiversity data integration–The significance of data resolution and domain. PLOS Biology, 17(3), e3000183. <a href="https://doi.org/10.1371/journal.pbio.3000183" class="uri">https://doi.org/10.1371/journal.pbio.3000183</a></li>
+<li>Higino, G., &amp; Vital, M. V. C. (2019). Mapping and understanding the digital biodiversity knowledge about vertebrates in the Atlantic Rainforest. <a href="https://doi.org/10.32942/osf.io/c63vj" class="uri">https://doi.org/10.32942/osf.io/c63vj</a></li>
+<li>Jo, J., Lee, H.-G., Kim, K. Y., &amp; Park, C. (2019). SoEM: a novel PCR-free biodiversity assessment method based on small-organelles enriched metagenomics. ALGAE, 34(1), 57–70. <a href="https://doi.org/10.4490/algae.2019.34.2.26" class="uri">https://doi.org/10.4490/algae.2019.34.2.26</a></li>
+<li>Axtner, J., Crampton-Platt, A., Hörig, L. A., Mohamed, A., Xu, C. C. Y., Yu, D. W., &amp; Wilting, A. (2019). An efficient and robust laboratory workflow and tetrapod database for larger scale environmental DNA studies. GigaScience, 8(4). <a href="https://doi.org/10.1093/gigascience/giz029" class="uri">https://doi.org/10.1093/gigascience/giz029</a></li>
+<li>Conde, D. A., Staerk, J., Colchero, F., da Silva, R., Schöley, J., Baden, H. M., … Vaupel, J. W. (2019). Data gaps and opportunities for comparative and conservation biology. Proceedings of the National Academy of Sciences, 201816367. <a href="https://doi.org/10.1073/pnas.1816367116" class="uri">https://doi.org/10.1073/pnas.1816367116</a></li>
+<li>Van den Berg, S. J. P., Baveco, H., Butler, E., De Laender, F., Focks, A., Franco, A., … Van den Brink, P. J. (2019). Modeling the Sensitivity of Aquatic Macroinvertebrates to Chemicals Using Traits. Environmental Science &amp; Technology. <a href="https://doi.org/10.1021/acs.est.9b00893" class="uri">https://doi.org/10.1021/acs.est.9b00893</a></li>
+<li>Lin, B. Y., Chan, P. P., &amp; Lowe, T. M. (2019). tRNAviz: explore and visualize tRNA sequence features. Nucleic Acids Research. <a href="https://doi.org/10.1093/nar/gkz438" class="uri">https://doi.org/10.1093/nar/gkz438</a></li>
+<li>Sporbert, M., Bruelheide, H., Seidler, G., Keil, P., Jandt, U., Austrheim, G., … Welk, E. (2019). Assessing sampling coverage of species distribution in biodiversity databases. Journal of Vegetation Science. <a href="https://doi.org/10.1111/jvs.12763" class="uri">https://doi.org/10.1111/jvs.12763</a></li>
+<li>Steidinger, B. S., Crowther, T. W., Liang, J., Van Nuland, M. E., Werner, G. D. A., … Peay, K. G. (2019). Climatic controls of decomposition drive the global biogeography of forest-tree symbioses. Nature, 569(7756), 404–408. <a href="https://doi.org/10.1038/s41586-019-1128-0" class="uri">https://doi.org/10.1038/s41586-019-1128-0</a></li>
+<li>Bagley, M., Pilgrim, E., Knapp, M., Yoder, C., Santo Domingo, J., &amp; Banerji, A. (2019). High-throughput environmental DNA analysis informs a biological assessment of an urban stream. Ecological Indicators, 104, 378–389. <a href="https://doi.org/10.1016/j.ecolind.2019.04.088" class="uri">https://doi.org/10.1016/j.ecolind.2019.04.088</a></li>
+<li>Foisy, M. R., Albert, L. P., Hughes, D. W. W., &amp; Weber, M. G. (2019). Do latex and resin canals spur plant diversification? Re‐examining a classic example of escape and radiate coevolution. Journal of Ecology. <a href="https://doi.org/10.1111/1365-2745.13203" class="uri">https://doi.org/10.1111/1365-2745.13203</a></li>
+<li>Boggs, Scheible, Machado, &amp; Meiklejohn. (2019). Single Fragment or Bulk Soil DNA Metabarcoding: Which is Better for Characterizing Biological Taxa Found in Surface Soils for Sample Separation? Genes, 10(6), 431. <a href="https://doi.org/10.3390/genes10060431" class="uri">https://doi.org/10.3390/genes10060431</a></li>
+<li>Palacios-Abrantes, J., Cisneros-Montemayor, A. M., Cisneros-Mata, M. A., Rodríguez, L., Arreguín-Sánchez, F., Aguilar, V., … Cheung, W. W. L. (2019). A metadata approach to evaluate the state of ocean knowledge: Strengths, limitations, and application to Mexico. PLOS ONE, 14(6), e0216723. <a href="https://doi.org/10.1371/journal.pone.0216723" class="uri">https://doi.org/10.1371/journal.pone.0216723</a></li>
+<li>Grattarola, F., Botto, G., da Rosa, I., Gobel, N., González, E., González, J., … Pincheira-Donoso, D. (2019). Biodiversidata: An Open-Access Biodiversity Database for Uruguay. Biodiversity Data Journal, 7. <a href="https://doi.org/10.3897/bdj.7.e36226" class="uri">https://doi.org/10.3897/bdj.7.e36226</a></li>
+<li>Danella Figo, D., De Amicis, K., Neiva Santos de Aquino, D., Pomiecinski, F., Gadermaier, G., Briza, P., … Souza Santos, K. (2019). Cashew Tree Pollen: An Unknown Source of IgE-Reactive Molecules. International Journal of Molecular Sciences, 20(10), 2397. <a href="https://doi.org/10.3390/ijms20102397" class="uri">https://doi.org/10.3390/ijms20102397</a></li>
+<li>Emer, C., Galetti, M., Pizo, M. A., Guimarães, P. R., Moraes, S., Piratelli, A., &amp; Jordano, P. (2018). Seed-dispersal interactions in fragmented landscapes - a metanetwork approach. Ecology Letters. <a href="https://doi.org/10.1111/ele.12909" class="uri">https://doi.org/10.1111/ele.12909</a></li>
+<li>Surabhi, S., Avvaru, A. K., Sowpati, D. T., &amp; Mishra, R. K. (2018). Patterns of microsatellite distribution reflect the evolution of biological complexity. <a href="https://doi.org/10.1101/253930" class="uri">https://doi.org/10.1101/253930</a></li>
+<li>Khorramdelazad, M., Bar, I., Whatmore, P., Smetham, G., Bhaaskaria, V., Yang, Y., … Ford, R. (2018). Transcriptome profiling of lentil (Lens culinaris) through the first 24 hours of Ascochyta lentis infection reveals key defence response genes. BMC Genomics, 19(1). <a href="https://doi.org/10.1186/s12864-018-4488-1" class="uri">https://doi.org/10.1186/s12864-018-4488-1</a></li>
+<li>Borcard D., Gillet F., Legendre P. (2018) Community Diversity. In: Numerical Ecology with R. Use R! Springer, Cham <a href="https://doi.org/10.1007/978-3-319-71404-2_8" class="uri">https://doi.org/10.1007/978-3-319-71404-2_8</a></li>
+<li>Vieilledent, G., Fischer, F. J., Chave, J., Guibal, D., Langbour, P., &amp; Gérard, J. (2018). New formula and conversion factor to compute tree species basic wood density from a global wood technology database. bioRxiv, 274068. <a href="https://doi.org/10.1101/274068" class="uri">https://doi.org/10.1101/274068</a></li>
+<li>Foster, Z. S. L., Chamberlain, S., &amp; Grünwald, N. J. (2018). Taxa: An R package implementing data standards and methods for taxonomic data. F1000Research, 7, 272. <a href="https://doi.org/10.12688/f1000research.14013.1" class="uri">https://doi.org/10.12688/f1000research.14013.1</a></li>
+<li>Bennett, J. M., Calosi, P., Clusella-Trullas, S., Martínez, B., Sunday, J., Algar, A. C., … Morales-Castilla, I. (2018). GlobTherm, a global database on thermal tolerances for aquatic and terrestrial organisms. Scientific Data, 5, 180022. <a href="https://doi.org/10.1038/sdata.2018.22" class="uri">https://doi.org/10.1038/sdata.2018.22</a></li>
+<li>Correia, R. A., Jarić, I., Jepson, P., Malhado, A. C. M., Alves, J. A., &amp; Ladle, R. J. (2018). Nomenclature instability in species culturomic assessments: Why synonyms matter. Ecological Indicators, 90, 74–78. <a href="https://doi.org/10.1016/j.ecolind.2018.02.059" class="uri">https://doi.org/10.1016/j.ecolind.2018.02.059</a></li>
+<li>Holmes, I., &amp; Davis Rabosky, A. R. (2018). Natural history bycatch: a pipeline for identifying metagenomic sequences in RADseq data. PeerJ, 6, e4662. <a href="https://doi.org/10.7717/peerj.4662" class="uri">https://doi.org/10.7717/peerj.4662</a></li>
+<li>Yee, Lauren. 2018. Spatial Modelling and Wildlife Health Surveillance: A case study of White Nose Syndrome in Ontario. Theses and Dissertations (Comprehensive). 2040. <a href="http://scholars.wlu.ca/etd/2040" class="uri">http://scholars.wlu.ca/etd/2040</a></li>
+<li>Ondei, S., Brook, B. W., &amp; Buettel, J. C. (2018). Nature’s untold stories: an overview on the availability and type of on-line data on long-term biodiversity monitoring. Biodiversity and Conservation. <a href="https://doi.org/10.1007/s10531-018-1582-2" class="uri">https://doi.org/10.1007/s10531-018-1582-2</a></li>
+<li>Tsuboi, M., van der Bijl, W., Kopperud, B. T., Erritzøe, J., Voje, K. L., Kotrschal, A., … Kolm, N. (2018). Breakdown of brain–body allometry and the encephalization of birds and mammals. Nature Ecology &amp; Evolution. <a href="https://doi.org/10.1038/s41559-018-0632-1" class="uri">https://doi.org/10.1038/s41559-018-0632-1</a></li>
+<li>Grenié, M., Mouillot, D., Villéger, S., Denelle, P., Tucker, C. M., Munoz, F., &amp; Violle, C. (2018). Functional rarity of coral reef fishes at the global scale: Hotspots and challenges for conservation. Biological Conservation, 226, 288–299. <a href="https://doi.org/10.1016/j.biocon.2018.08.011" class="uri">https://doi.org/10.1016/j.biocon.2018.08.011</a></li>
+<li>Niedballa, J. (2018). Managing and Analysing Camera Trapping Data: An Advanced Toolbox (Doctoral dissertation). <a href="https://refubium.fu-berlin.de/bitstream/handle/fub188/22961/Dissertation_Niedballa.pdf?sequence=3&amp;isAllowed=y" class="uri">https://refubium.fu-berlin.de/bitstream/handle/fub188/22961/Dissertation_Niedballa.pdf?sequence=3&amp;isAllowed=y</a></li>
+<li>Morzaria-Luna, H. N., Cruz-Piñón, G., Brusca, R. C., López-Ortiz, A. M., Moreno-Báez, M., Reyes-Bonilla, H., &amp; Turk-Boyer, P. (2018). Biodiversity hotspots are not congruent with conservation areas in the Gulf of California. Biodiversity and Conservation. <a href="https://doi.org/10.1007/s10531-018-1631-x" class="uri">https://doi.org/10.1007/s10531-018-1631-x</a>&quot;</li>
+<li>Vieilledent, G., Fischer, F. J., Chave, J., Guibal, D., Langbour, P., &amp; Gérard, J. (2018). New formula and conversion factor to compute basic wood density of tree species using a global wood technology database. American Journal of Botany. <a href="https://doi.org/10.1002/ajb2.1175" class="uri">https://doi.org/10.1002/ajb2.1175</a></li>
+<li>Milla, R., Bastida, J. M., Turcotte, M. M., Jones, G., Violle, C., Osborne, C. P., … Byun, C. (2018). Phylogenetic patterns and phenotypic profiles of the species of plants and mammals farmed for food. Nature Ecology &amp; Evolution, 2(11), 1808–1817. <a href="https://doi.org/10.1038/s41559-018-0690-4" class="uri">https://doi.org/10.1038/s41559-018-0690-4</a></li>
+<li>Kandlikar, G. S., Gold, Z. J., Cowen, M. C., Meyer, R. S., Freise, A. C., Kraft, N. J. B., … Curd, E. E. (2018). ranacapa: An R package and Shiny web app to explore environmental DNA data with exploratory statistics and interactive visualizations. F1000Research, 7, 1734. <a href="https://doi.org/10.12688/f1000research.16680.1" class="uri">https://doi.org/10.12688/f1000research.16680.1</a></li>
+<li>Bartomeus, I., Stavert, J. R., Ward, D., &amp; Aguado, O. (2018). Historical collections as a tool for assessing the global pollination crisis. Philosophical Transactions of the Royal Society B: Biological Sciences, 374(1763), 20170389. <a href="https://doi.org/10.1098/rstb.2017.0389" class="uri">https://doi.org/10.1098/rstb.2017.0389</a></li>
+<li>Pelletier, T. A., Carstens, B. C., Tank, D. C., Sullivan, J., &amp; Espíndola, A. (2018). Predicting plant conservation priorities on a global scale. Proceedings of the National Academy of Sciences, 201804098. <a href="https://doi.org/10.1073/pnas.1804098115" class="uri">https://doi.org/10.1073/pnas.1804098115</a></li>
+<li>Szöcs, E. (2017). Statistical eco (-toxico) logy: improving the utilisation of data for environmental risk assessment (Doctoral dissertation, Dissertation, Landau, Universität Koblenz-Landau, Campus Landau, 2017). <a href="https://portal.dnb.de/opac.htm?method=simpleSearch&amp;cqlMode=true&amp;query=idn%3D1124465774" class="uri">https://portal.dnb.de/opac.htm?method=simpleSearch&amp;cqlMode=true&amp;query=idn%3D1124465774</a></li>
+<li>Réjou-Méchain, M., Tanguy, A., Piponiot, C., Chave, J., &amp; Hérault, B. (2017). BIOMASS: An R Package for estimating aboveground biomass and its uncertainty in tropical forests. Methods in Ecology and Evolution. <a href="https://doi.org/10.1111/2041-210x.12753" class="uri">https://doi.org/10.1111/2041-210x.12753</a></li>
+<li>O’Donnell JL, Kelly RP, Shelton AO, Samhouri JF, Lowell NC, Williams GD. (2017) Spatial distribution of environmental DNA in a nearshore marine habitat. PeerJ 5:e3044 <a href="https://doi.org/10.7717/peerj.3044" class="uri">https://doi.org/10.7717/peerj.3044</a></li>
+<li>Mohiuddin, M. M., Salama, Y., Schellhorn, H. E., &amp; Golding, G. B. (2017). Shotgun metagenomic sequencing reveals freshwater beach sands as reservoir of bacterial pathogens. Water Research. <a href="https://doi.org/10.1016/j.watres.2017.02.057" class="uri">https://doi.org/10.1016/j.watres.2017.02.057</a></li>
+<li>Andruszkiewicz, E. A., Starks, H. A., Chavez, F. P., Sassoubre, L. M., Block, B. A., &amp; Boehm, A. B. (2017). Biomonitoring of marine vertebrates in Monterey Bay using eDNA metabarcoding. PLOS ONE, 12(4), e0176343. <a href="https://doi.org/10.1371/journal.pone.0176343" class="uri">https://doi.org/10.1371/journal.pone.0176343</a></li>
+<li>Olson, N. D., Zook, J. M., Morrow, J. B., &amp; Lin, N. J. (2017). Challenging a bioinformatic tool’s ability to detect microbial contaminants using in silico whole genome sequencing data. PeerJ, 5, e3729. <a href="https://doi.org/10.7717/peerj.3729" class="uri">https://doi.org/10.7717/peerj.3729</a></li>
+<li>Ordano, M., Blendinger, P. G., Lomáscolo, S. B., Chacoff, N. P., Sánchez, M. S., Núñez Montellano, M. G., … Valoy, M. (2017). The role of trait combination in the conspicuousness of fruit display among bird-dispersed plants. Functional Ecology. <a href="https://doi.org/10.1111/1365-2435.12899" class="uri">https://doi.org/10.1111/1365-2435.12899</a></li>
+<li>Smits, P. D. (2017). Remodeling the Fossil Record: Analysis of Emergent Evolutionary and Ecological Patterns (Doctoral dissertation, The University of Chicago). <a href="https://search.proquest.com/openview/2a353f0e54c8c3ee37a0d8d2bcd8ad6d/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" class="uri">https://search.proquest.com/openview/2a353f0e54c8c3ee37a0d8d2bcd8ad6d/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</a></li>
+<li>Bartomeus, I., Cariveau, D. P., Harrison, T., &amp; Winfree, R. (2017). On the inconsistency of pollinator species traits for predicting either response to land-use change or functional contribution. Oikos. <a href="https://doi.org/10.1111/oik.04507" class="uri">https://doi.org/10.1111/oik.04507</a></li>
+<li>Leung, W. T. M., Thomas-Walters, L., Garner, T. W. J., Balloux, F., Durrant, C., &amp; Price, S. J. (2017). A quantitative-PCR based method to estimate ranavirus viral load following normalisation by reference to an ultraconserved vertebrate target. Journal of Virological Methods. <a href="https://doi.org/10.1016/j.jviromet.2017.08.016" class="uri">https://doi.org/10.1016/j.jviromet.2017.08.016</a></li>
+<li>Love-Anderegg, L. D. (2017). On the variation of traits and tree range constraints (Doctoral dissertation, The University of Washington). <a href="https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/39962/LoveAnderegg_washington_0250E_17084.pdf?sequence=1" class="uri">https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/39962/LoveAnderegg_washington_0250E_17084.pdf?sequence=1</a></li>
+<li>Malcolm F. Rosenthal, Matthew Gertler, Angela D. Hamilton, Sonal Prasad, Maydianne C.B. Andrade, Taxonomic bias in animal behaviour publications. Animal Behaviour, Volume 127, 2017, pgs. 83-89. <a href="https://doi.org/10.1016/j.anbehav.2017.02.017" class="uri">https://doi.org/10.1016/j.anbehav.2017.02.017</a></li>
+<li>Reznik, E., Christodoulou, D., Goldford, J. E., Briars, E., Sauer, U., Segrè, D., &amp; Noor, E. (2017). Genome-Scale Architecture of Small Molecule Regulatory Networks and the Fundamental Trade-Off between Regulation and Enzymatic Activity. Cell Reports, 20(11), 2666–2677. <a href="https://doi.org/10.1016/j.celrep.2017.08.066" class="uri">https://doi.org/10.1016/j.celrep.2017.08.066</a></li>
+<li>Power, S. C., Anthony Verboom, G., Bond, W. J., &amp; Cramer, M. D. (2017). Environmental correlates of biome-level floristic turnover in South Africa. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.12971" class="uri">https://doi.org/10.1111/jbi.12971</a></li>
+<li>Branoff, B. L. (2017). Quantifying the influence of urban land use on mangrove biology and ecology: A meta-analysis. Global Ecology and Biogeography. <a href="https://doi.org/10.1111/geb.12638" class="uri">https://doi.org/10.1111/geb.12638</a></li>
+<li>Berlemont, R. (2017). Distribution and diversity of enzymes for polysaccharide degradation in fungi. Scientific Reports, 7(1). <a href="https://doi.org/10.1038/s41598-017-00258-w" class="uri">https://doi.org/10.1038/s41598-017-00258-w</a></li>
+<li>Dallas, T., Decker, R. R., &amp; Hastings, A. (2017). Species are not most abundant in the centre of their geographic range or climatic niche. Ecology Letters. <a href="https://doi.org/10.1111/ele.12860" class="uri">https://doi.org/10.1111/ele.12860</a></li>
+<li>Hutchinson, M. C., Cagua, E. F., &amp; Stouffer, D. B. (2017). Cophylogenetic signal is detectable in pollination interactions across ecological scales. Ecology. <a href="https://doi.org/10.1002/ecy.1955" class="uri">https://doi.org/10.1002/ecy.1955</a></li>
+<li>Muñoz, G. 2017. Ecological Event Miner: mines ecological events from published literature. <a href="https://github.com/fgabriel1891/Ecological_event_miner" class="uri">https://github.com/fgabriel1891/Ecological_event_miner</a></li>
+<li>Chalmandrier, L., Albouy, C., &amp; Pellissier, L. (2017). Species pool distributions along functional trade-offs shape plant productivity–diversity relationships. Scientific Reports, 7(1). <a href="https://doi.org/10.1038/s41598-017-15334-4" class="uri">https://doi.org/10.1038/s41598-017-15334-4</a></li>
+<li>Sánchez-Tapia, A., de Siqueira, M., Lima, R., Barros, F., Gall, G., Gadelha, L., and da Silva, L. Model-R: A Framework for Scalable and Reproducible Ecological Niche Modeling. In High Performance Computing - Fourth Latin American Conference, CARLA 2017. Communications in Computer and Information Science, vol. 796. Springer, 2017 <a href="http://www.lncc.br/~lgadelha/publications/model-r-carla-2017.pdf" class="uri">http://www.lncc.br/~lgadelha/publications/model-r-carla-2017.pdf</a></li>
+<li>Drost, H.-G., Gabel, A., Liu, J., Quint, M., &amp; Grosse, I. (2017). myTAI: evolutionary transcriptomics with R. Bioinformatics. <a href="https://doi.org/10.1093/bioinformatics/btx835" class="uri">https://doi.org/10.1093/bioinformatics/btx835</a></li>
+<li>Vaidya, G. G. (2017). Taxonomic Checklists as Biodiversity Data: How Series of Checklists can Provide Information on Synonymy, Circumscription Change and Taxonomic Discovery (Doctoral dissertation, University of Colorado at Boulder). <a href="https://search.proquest.com/openview/e04ca58442fa1725c8bc31b2cc0abf0f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" class="uri">https://search.proquest.com/openview/e04ca58442fa1725c8bc31b2cc0abf0f/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y</a></li>
+<li>Niedballa, J., Sollmann, R., Courtiol, A., &amp; Wilting, A. (2016). camtrapR: an R package for efficient camera trap data management. Methods in Ecology and Evolution. <a href="doi:10.1111/2041-210x.12600" class="uri">doi:10.1111/2041-210x.12600</a></li>
+<li>Pérez-Luque, A. J., Barea-Azcón, J. M., Álvarez-Ruiz, L., Bonet-García, F. J., &amp; Zamora, R. (2016). Dataset of Passerine bird communities in a Mediterranean high mountain (Sierra Nevada, Spain). ZK, 552, 137–154. <a href="doi:10.3897/zookeys.552.6934" class="uri">doi:10.3897/zookeys.552.6934</a></li>
+<li>Bachelot, B., Uriarte, M., Zimmerman, J. K., Thompson, J., Leff, J. W., Asiaii, A., … McGuire, K. (2016). Long-lasting effects of land use history on soil fungal communities in second-growth tropical rain forests. Ecol Appl. <a href="doi:10.1890/15-1397.1" class="uri">doi:10.1890/15-1397.1</a></li>
+<li>Wagner, F. H., Hérault, B., Bonal, D., Stahl, C., Anderson, L. O., Baker, T. R., … Botosso, P. C. (2016). Climate seasonality limits leaf carbon assimilation and wood productivity in tropical forests. Biogeosciences, 13(8), 2537–2562. <a href="doi:10.5194/bg-13-2537-2016" class="uri">doi:10.5194/bg-13-2537-2016</a></li>
+<li>Schwery, O., &amp; O’Meara, B. C. (2016). MonoPhy : a simple R package to find and visualize monophyly issues . PeerJ Computer Science, 2, e56. <a href="doi:10.7717/peerj-cs.56" class="uri">doi:10.7717/peerj-cs.56</a></li>
+<li>Bradie, J., &amp; Leung, B. (2016). A quantitative synthesis of the importance of variables used in MaxEnt species distribution models. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.12894" class="uri">https://doi.org/10.1111/jbi.12894</a></li>
+<li>Bufford, J. L., Hulme, P. E., Sikes, B. A., Cooper, J. A., Johnston, P. R., &amp; Duncan, R. P. (2016). Taxonomic similarity, more than contact opportunity, explains novel plant-pathogen associations between native and alien taxa. New Phytol. <a href="https://doi.org/10.1111/nph.14077" class="uri">https://doi.org/10.1111/nph.14077</a></li>
+<li>Costello, M. J., Basher, Z., McLeod, L., Asaad, I., Claus, S., Vandepitte, L., et al. (2017). Methods for the Study of Marine Biodiversity. In The GEO Handbook on Biodiversity Observation Networks (pp. 129-163). Springer International Publishing. <a href="http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6" class="uri">http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6</a></li>
+<li>Cramer, M. D., &amp; Verboom, G. A. (2016). Measures of biologically relevant environmental heterogeneity improve prediction of regional plant species richness. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.12911" class="uri">https://doi.org/10.1111/jbi.12911</a></li>
+<li>Eriksson, Björn. 2016. Diversity of ecosystems: Variation in network structure among food webs. <a href="http://www.diva-portal.org/smash/get/diva2:951404/FULLTEXT01.pdf" class="uri">http://www.diva-portal.org/smash/get/diva2:951404/FULLTEXT01.pdf</a></li>
+<li>Foster, Z. S. L., Sharpton, T., &amp; Grunwald, N. J. (2016). MetacodeR: An R package for manipulation and heat tree visualization of community taxonomic data from metabarcoding. <a href="https://doi.org/10.1101/071019" class="uri">https://doi.org/10.1101/071019</a></li>
+<li>Halse-Gramkow, M., Ernst, M., Rønsted, N., Dunn, R. R., &amp; Saslis-Lagoudakis, C. H. (2016). Using evolutionary tools to search for novel psychoactive plants. Plant Genetic Resources, 1–10. <a href="https://doi.org/10.1017/s1479262116000344" class="uri">https://doi.org/10.1017/s1479262116000344</a></li>
+<li>Liang, J., Crowther, T. W., Picard, N., Wiser, S., Zhou, M., Alberti, G., et al. (2016). Positive biodiversity-productivity relationship predominant in global forests. Science, 354(6309), aaf8957–aaf8957. <a href="https://doi.org/10.1126/science.aaf8957" class="uri">https://doi.org/10.1126/science.aaf8957</a></li>
+<li>Nath, C. D., Munoz, F., Pélissier, R., Burslem, D. F. R. P., &amp; Muthusankar, G. (2016). Growth rings in tropical trees: role of functional traits, environment, and phylogeny. Trees. <a href="https://doi.org/10.1007/s00468-016-1442-1" class="uri">https://doi.org/10.1007/s00468-016-1442-1</a></li>
+<li>Niedballa, J., Sollmann, R., Courtiol, A., &amp; Wilting, A. (2016). camtrapR: an R package for efficient camera trap data management. Methods in Ecology and Evolution. <a href="https://doi.org/10.1111/2041-210x.12600" class="uri">https://doi.org/10.1111/2041-210x.12600</a></li>
+<li>Sclavi, B., &amp; Herrick, J. (2016). Genome size variation and species diversity in salamander families. <a href="https://doi.org/10.1101/065425" class="uri">https://doi.org/10.1101/065425</a></li>
+<li>Vincze, O. (2016). Light enough to travel or wise enough to stay? Brain size evolution and migratory behaviour in birds. Evolution. <a href="https://doi.org/10.1111/evo.13012" class="uri">https://doi.org/10.1111/evo.13012</a></li>
+<li>Wagner, V. (2016). A review of software tools for spell-checking taxon names in vegetation databases. Journal of Vegetation Science. <a href="https://doi.org/10.1111/jvs.12432" class="uri">https://doi.org/10.1111/jvs.12432</a></li>
+<li>Weber, M. G., Porturas, L. D., &amp; Taylor, S. A. (2016). Foliar nectar enhances plant–mite mutualisms: the effect of leaf sugar on the control of powdery mildew by domatia-inhabiting mites. Annals of Botany, mcw118. <a href="https://doi.org/10.1093/aob/mcw118" class="uri">https://doi.org/10.1093/aob/mcw118</a></li>
+<li>Wiser, S. K. (2016). Achievements and challenges in the integration, reuse and synthesis of vegetation plot data. Journal of Vegetation Science. <a href="https://doi.org/10.1111/jvs.12419" class="uri">https://doi.org/10.1111/jvs.12419</a></li>
+<li>Galata, V., Backes, C., Laczny, C. C., Hemmrich-Stanisak, G., Li, H., Smoot, L., et al. (2016). Comparing genome versus proteome-based identification of clinical bacterial isolates. Briefings in Bioinformatics, bbw122. <a href="https://doi.org/10.1093/bib/bbw122" class="uri">https://doi.org/10.1093/bib/bbw122</a></li>
+<li>Lucas, T. C. (2016). The role of population structure and size in determining bat pathogen richness (Doctoral dissertation, UCL (University College London)). <a href="http://discovery.ucl.ac.uk/1531925/" class="uri">http://discovery.ucl.ac.uk/1531925/</a></li>
+<li>Bartomeus, I., Cariveau, D., Harrison, T., &amp; Winfree, R. (2016). On the inconsistency of pollinator species traits for predicting either response to agricultural intensification or functional contribution. <a href="https://doi.org/10.1101/072132" class="uri">https://doi.org/10.1101/072132</a></li>
+<li>Baden, H. M., Särkinen, T., Conde, D. A., Matthews, A. C., Vandrot, H., Chicas, S., … Harris, D. J. (2015). A BOTANICAL INVENTORY OF FOREST ON KARSTIC LIMESTONE AND METAMORPHIC SUBSTRATE IN THE CHIQUIBUL FOREST, BELIZE, WITH FOCUS ON WOODY TAXA. Edinburgh Journal of Botany, 73(01), 39–81. <a href="doi:10.1017/s0960428615000256" class="uri">doi:10.1017/s0960428615000256</a></li>
+<li>Vanden Berghe, E., Coro, G., Bailly, N., Fiorellato, F., Aldemita, C., Ellenbroek, A., &amp; Pagano, P. (2015). Retrieving taxa names from large biodiversity data collections using a flexible matching workflow. Ecological Informatics, 28, 29–41. <a href="doi:10.1016/j.ecoinf.2015.05.004" class="uri">doi:10.1016/j.ecoinf.2015.05.004</a></li>
+<li>Bocci, G. (2015). TR8: an R package for easily retrieving plant species traits. Methods in Ecology and Evolution, 6(3), 347–350. <a href="doi:10.1111/2041-210x.12327" class="uri">doi:10.1111/2041-210x.12327</a></li>
+<li>Bradie, J., Pietrobon, A., &amp; Leung, B. (2015). Beyond species-specific assessments: an analysis and validation of environmental distance metrics for non-indigenous species risk assessment. Biological Invasions, 17(12), 3455–3465. <a href="doi:10.1007/s10530-015-0970-8" class="uri">doi:10.1007/s10530-015-0970-8</a></li>
+<li>Dodd, A. J., Burgman, M. A., McCarthy, M. A., &amp; Ainsworth, N. (2015). The changing patterns of plant naturalization in Australia. Diversity Distrib., 21(9), 1038–1050. <a href="doi:10.1111/ddi.12351" class="uri">doi:10.1111/ddi.12351</a></li>
+<li>Hodgins, K. A., Bock, D. G., Hahn, M. A., Heredia, S. M., Turner, K. G., &amp; Rieseberg, L. H. (2015). Comparative genomics in the Asteraceae reveals little evidence for parallel evolutionary change in invasive taxa. Mol Ecol, 24(9), 2226–2240. <a href="doi:10.1111/mec.13026" class="uri">doi:10.1111/mec.13026</a></li>
+<li>Lapatas, V., Stefanidakis, M., Jimenez, R. C., Via, A., &amp; Schneider, M. V. (2015). Data integration in biological research: an overview. J of Biol Res-Thessaloniki, 22(1). <a href="doi:10.1186/s40709-015-0032-5" class="uri">doi:10.1186/s40709-015-0032-5</a></li>
+<li>Poisot, T. (2015). Best publishing practices to improve user confidence in scientific software. IEE, 8. <a href="doi:10.4033/iee.2015.8.8.f" class="uri">doi:10.4033/iee.2015.8.8.f</a></li>
+<li>Vandepitte, L., Vanhoorne, B., Decock, W., Dekeyzer, S., Trias Verbeeck, A., Bovit, L., … Mees, J. (2015). How Aphia—The Platform behind Several Online and Taxonomically Oriented Databases—Can Serve Both the Taxonomic Community and the Field of Biodiversity Informatics. Journal of Marine Science and Engineering, 3(4), 1448–1473. <a href="doi:10.3390/jmse3041448" class="uri">doi:10.3390/jmse3041448</a></li>
+<li>Pérez-Luque, A. J., Sánchez-Rojas, C. P., Zamora, R., Pérez-Pérez, R., &amp; Bonet, F. J. (2015). Dataset of Phenology of Mediterranean high-mountain meadows flora (Sierra Nevada, Spain). PhytoKeys, 46, 89–107. <a href="doi:10.3897/phytokeys.46.9116" class="uri">doi:10.3897/phytokeys.46.9116</a></li>
+<li>Poisot, T., Gravel, D., Leroux, S., Wood, S. A., Fortin, M.-J., Baiser, B., … Stouffer, D. B. (2015). Synthetic datasets and community tools for the rapid testing of ecological hypotheses. Ecography, 39(4), 402–408. <a href="doi:10.1111/ecog.01941" class="uri">doi:10.1111/ecog.01941</a></li>
+<li>Ningthoujam, S. S., Choudhury, M. D., Potsangbam, K. S., Chetia, P., Nahar, L., Sarker, S. D., … Talukdar, A. D. (2014). NoSQL Data Model for Semi-automatic Integration of Ethnomedicinal Plant Data from Multiple Sources. Phytochemical Analysis, 25(6), 495–507. <a href="doi:10.1002/pca.2520" class="uri">doi:10.1002/pca.2520</a></li>
+<li>Pos, E., Guevara Andino, J. E., Sabatier, D., Molino, J.-F., Pitman, N., Mogollón, H., … ter Steege, H. (2014). Are all species necessary to reveal ecologically important patterns? Ecology and Evolution, 4(24), 4626–4636. <a href="doi:10.1002/ece3.1246" class="uri">doi:10.1002/ece3.1246</a></li>
+<li>Drozd, P., &amp; Šipoš, J. (2013). R for all (I): Introduction to the new age of biological analyses. Casopis Slezskeho Zemskeho Muzea (A), 62(1). <a href="doi:10.2478/cszma-2013-0004" class="uri">doi:10.2478/cszma-2013-0004</a></li>
+<li>Chamberlain, S. A., &amp; Szöcs, E. (2013). taxize: taxonomic search and retrieval in R. F1000Res. <a href="doi:10.12688/f1000research.2-191.v1" class="uri">doi:10.12688/f1000research.2-191.v1</a></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="taxizedb.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="contributing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropensci/taxize-book/edit/master/19-usage.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

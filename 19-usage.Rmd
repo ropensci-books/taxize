@@ -1,0 +1,54 @@
+# Usage {#usage}
+
+## Citations {#taxize-citations}
+
+```{r strxt-fxn, echo=FALSE}
+strxt <- function(string, pattern) {
+  regmatches(string, gregexpr(pattern, string, perl = TRUE))[[1]]
+}
+```
+
+```{r usage-get-citaitons, echo=FALSE, cache=TRUE}
+library(crul)
+library(jsonlite)
+url <- "https://github.com/ropenscilabs/ropensci_citations/raw/master/citations_used.json"
+con <- crul::HttpClient$new(url)
+res <- con$get()
+res$raise_for_status()
+x <- jsonlite::fromJSON(res$parse("UTF-8"))
+df <- x[x$name == "taxize", ]
+cites <- df$citation
+```
+
+There's currently `r NROW(df)` `taxize` citations.
+
+```{r usage-citation-parsing, echo=FALSE, cache=TRUE, results="asis"}
+library(handlr)
+library(dplyr)
+parse_cit <- function(x) {
+  z = HandlrClient$new(x)
+  if (is.null(z$doi)) {
+    yr <- strxt(x, "\\s\\(?[0-9]{4}\\.?\\)?")
+    yr <- gsub("\\s+|\\.|\\(|\\)", "", yr)
+    if (length(yr) > 1) yr <- yr[1]
+    list(
+      year = yr,
+      citation = x
+    )
+  } else {
+    z$read("citeproc")
+    list(
+      year = strxt(z$parsed$date_published, "[0-9]{4}"),
+      citation = x
+    )
+  }
+}
+res <- lapply(cites, parse_cit)
+alldata <- data.table::rbindlist(res)
+alldata$year <- as.numeric(alldata$year)
+adtbl <- tbl_df(alldata)
+adtbl <- arrange(adtbl, desc(year))
+for (i in seq_len(NROW(adtbl))) {
+  cat(paste0("* ", adtbl[i, "citation"]), sep = "\n")
+}
+```
