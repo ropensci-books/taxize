@@ -3,3 +3,6 @@ render:
 
 serve:
 	Rscript -e "bookdown::serve_book()"
+
+rm_citation_cache:
+	rm _bookdown_files/_main_cache/html/usage-*

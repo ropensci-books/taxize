@@ -262,15 +262,12 @@ start from where you left off before the interruption.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2">res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</a></code></pre></div>
 <pre><code>#&gt; ══  3 queries  ═══════════════
-#&gt; ✔  Found:  Ayapanopsis vargasii
-#&gt;    gbifid                             scientificname    rank   status
-#&gt; 1 3959242 Echinocactus tenuiflorus Link ex Salm-Dyck species DOUBTFUL
-#&gt; 2 8366641              Echinocactus tenuiflorus Link species DOUBTFUL
-#&gt;   matchtype
-#&gt; 1     EXACT
-#&gt; 2     EXACT
-#&gt; ✖  Not Found:  Echinocactus tenuiflorus
-#&gt; ✔  Found:  Camellia indochinensis
+#&gt; ✔  Found:  Claoxylon physocarpum
+#&gt; ✔  Found:  Cudrania grandifolia
+#&gt;    gbifid                     scientificname    rank   status matchtype
+#&gt; 1 7422903           Monogramma pumila Massee species  SYNONYM     EXACT
+#&gt; 2 5657953 Monogramma pumila Massee ex C.Chr. species DOUBTFUL     EXACT
+#&gt; ✖  Not Found:  Monogramma pumila
 #&gt; ══  Results  ═════════════════
 #&gt; 
 #&gt; ● Total: 3 
@@ -280,16 +277,15 @@ start from where you left off before the interruption.</p>
 <a class="sourceLine" id="cb11-2" data-line-number="2">z</a></code></pre></div>
 <pre><code>#&gt; &lt;taxon state&gt; 
 #&gt;  class: gbifid
-#&gt;  elapsed (sec): 1.35
+#&gt;  elapsed (sec): 1.47
 #&gt;  count: 3
-#&gt;   Ayapanopsis vargasii: 3104445
-#&gt;   Echinocactus tenuiflorus: NA
-#&gt;   Camellia indochinensis: 7313803</code></pre>
+#&gt;   Claoxylon physocarpum: 3060518
+#&gt;   Cudrania grandifolia: 3766417
+#&gt;   Monogramma pumila: NA</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_remaining</span>()</a></code></pre></div>
 <pre><code>#&gt; character(0)</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_completed</span>()</a></code></pre></div>
-<pre><code>#&gt; [1] &quot;Ayapanopsis vargasii&quot;     &quot;Camellia indochinensis&quot;  
-#&gt; [3] &quot;Echinocactus tenuiflorus&quot;</code></pre>
+<pre><code>#&gt; [1] &quot;Claoxylon physocarpum&quot; &quot;Cudrania grandifolia&quot;  &quot;Monogramma pumila&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></a></code></pre></div>
 <pre><code>#&gt; [1] 3</code></pre>
 <p>See <code>?taxon_state</code> with <code>taxize</code> loaded to get all the details on working
