@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Contributors | taxize book</title>
+  <title>Chapter 10 Contributing | taxize book</title>
   <meta name="description" content="taxize manual" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Contributors | taxize book" />
+  <meta property="og:title" content="Chapter 10 Contributing | taxize book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ropensci/taxize-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Contributors | taxize book" />
+  <meta name="twitter:title" content="Chapter 10 Contributing | taxize book" />
   
   <meta name="twitter:description" content="taxize manual" />
   
@@ -167,7 +167,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>9</b> taxizedb</a><ul>
 <li class="chapter" data-level="9.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>9.1</b> other sections</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="contribuors.html"><a href="contribuors.html"><i class="fa fa-check"></i><b>10</b> Contributors</a></li>
+<li class="chapter" data-level="10" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>10</b> Contributing</a><ul>
+<li class="chapter" data-level="10.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>10.1</b> Contributing to this book</a></li>
+<li class="chapter" data-level="10.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>10.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>10.2.1</b> Bugs?</a></li>
+<li class="chapter" data-level="10.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>10.2.2</b> Code contributions</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>11</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="contribuors.html" target="blank">(c) Scott Chamberlain, 2019</a></li>
@@ -189,14 +195,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="contribuors" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Contributors</h1>
+<div id="contributing" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Contributing</h1>
+<div id="contribute-taxize-book" class="section level2">
+<h2><span class="header-section-number">10.1</span> Contributing to this book</h2>
+<p>This book is created using <a href="https://bookdown.org/">bookdown</a>.</p>
+<p>Each chapter is an Rmarkdown (<code>.Rmd</code>) file. While reading this
+book, click on the <strong>Edit</strong> button in the top navigation bar, which
+will bring you to the source file for that chapter. You can then
+make an edit right there in your browser, or you can clone down
+the repo and make a change locally, then send a pull request.</p>
+<p>The source for this book lives at <a href="https://github.com/ropenscilabs/taxize-book" class="uri">https://github.com/ropenscilabs/taxize-book</a></p>
+</div>
+<div id="contribute-taxize" class="section level2">
+<h2><span class="header-section-number">10.2</span> Contributing to taxize</h2>
+<div id="bugs" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Bugs?</h3>
 <ul>
-<li><a href="https://github.com/sckott/">Scott Chamberlain</a></li>
-<li>you?</li>
-<li></li>
+<li>Submit an issue on the <a href="https://github.com/ropensci/taxize/issues">Issues page</a> - be sure to include R session information and a reproducible example.</li>
+</ul>
+</div>
+<div id="code-contributions" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> Code contributions</h3>
+<div id="broad-overview-of-contributing-workflow" class="section level4">
+<h4><span class="header-section-number">10.2.2.1</span> Broad overview of contributing workflow</h4>
+<ul>
+<li>Fork this repo to your Github account</li>
+<li>Clone your version on your account down to your machine from your account, e.g,. <code>git clone https://github.com/&lt;yourgithubusername&gt;/taxize.git</code></li>
+<li>Make sure to track progress upstream (i.e., on our version of <code>taxize</code> at <code>ropensci/taxize</code>) by doing <code>git remote add upstream https://github.com/ropensci/taxize.git</code>. Before making changes make sure to pull changes in from upstream by doing either <code>git fetch upstream</code> then merge later or <code>git pull upstream</code> to fetch and merge in one step</li>
+<li>Make your changes (bonus points for making changes on a new feature branch)</li>
+<li>Please do write a test(s) for your changes if they affect code and not just docs (see Tests below)</li>
+<li>Push up to your account</li>
+<li>Submit a pull request to home base at <code>ropensci/taxize</code></li>
+</ul>
+</div>
+<div id="tests" class="section level4">
+<h4><span class="header-section-number">10.2.2.2</span> Tests</h4>
+<p>To add tests, go to the folder <code>tests/testthat/</code>. Tests are generally organized as individual files for each exported function from the package (that is, listed as an export in the <code>NAMESPACE</code> file). If you are adding a new exported function, add a new test file. If you are changing an existing function, work in the tests file for that function, unless it doesn’t have tests, in which case make a new test file.</p>
+<p>The book R packages book provides <a href="http://r-pkgs.had.co.nz/tests.html">a chapter on testing in general</a>. Do consult that first if you aren’t familiar with testing in R.</p>
+<p>The easiest set up to run tests is from within an R session:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">library</span>(devtools)</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">library</span>(testthat)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co"># loads the package</span></a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="kw">load_all</span>()</a></code></pre></div>
+<p>To test an individual test file</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">test_file</span>(<span class="st">&quot;tests/testthat/test-foobar.R&quot;</span>)</a></code></pre></div>
+<p>To run all tests</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">test</span>()</a></code></pre></div>
+<p>If you are running tests that have <code>skip_on_cran()</code> in them, set <code>Sys.setenv(NOT_CRAN = &quot;true&quot;)</code> prior to running tests.</p>
+</div>
+<div id="making-changes" class="section level4">
+<h4><span class="header-section-number">10.2.2.3</span> Making changes</h4>
+<p>In addition to changing the code, do make sure to udpate the documentation if applicable. The R packages book book has a <a href="http://r-pkgs.had.co.nz/man.html">chapter on documentation</a> you should read if you aren’t familiar.</p>
+<p>After code and documentation has been changed, update documentation by running either <code>devtools::document()</code> or <code>roxygen2::roxygenise()</code>.</p>
+<p>Make sure if you change what packages or even functions within packages are imported, most likely add the package to Imports in the DESCRIPTION file and list what functions are imported in the <code>taxize-package.R</code> file.</p>
+<p>Be conservative about adding new dependencies.</p>
+</div>
+<div id="style" class="section level4">
+<h4><span class="header-section-number">10.2.2.4</span> Style</h4>
+<ul>
+<li>Make sure code, documentation, and comments are no more than 80 characters in width.</li>
+<li>Use <code>&lt;-</code> instead of <code>=</code> for assignment</li>
+<li>Always use <code>snake_case</code> (and all lowercase) instead of <code>camelCase</code></li>
 </ul>
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
@@ -234,7 +299,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/taxize-book/edit/master/20-contributors.Rmd",
+"link": "https://github.com/ropensci/taxize-book/edit/master/20-contributing.Rmd",
 "text": "Edit"
 },
 "history": {
