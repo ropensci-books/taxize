@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">taxize book</a></li>
       after: |
-        <li><a href="contribuors.html" target="blank">(c) Scott Chamberlain, 2019</a></li>
+        <li>(c) Scott Chamberlain, 2019</li>
     edit: https://github.com/ropensci/taxize-book/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:

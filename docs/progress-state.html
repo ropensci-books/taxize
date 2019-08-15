@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>11</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="contribuors.html" target="blank">(c) Scott Chamberlain, 2019</a></li>
+<li>(c) Scott Chamberlain, 2019</li>
 
 </ul>
 
@@ -259,28 +259,31 @@ start from where you left off before the interruption.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2">res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</a></code></pre></div>
 <pre><code>#&gt; ══  3 queries  ═══════════════
-#&gt; ✔  Found:  Morinda ammitia
-#&gt; ✔  Found:  Cryptocarya myrcioides
-#&gt; ✔  Found:  Scorzoneroides carpetana
+#&gt; ✔  Found:  Wettinia longipetala
+#&gt;    gbifid       scientificname    rank   status matchtype
+#&gt; 1 7534801 Rosa wichurae C.Koch species  SYNONYM     EXACT
+#&gt; 2 3008874 Rosa wichurae K.Koch species DOUBTFUL     EXACT
+#&gt; 3 7904955    Rosa wichurana Cr species  SYNONYM     FUZZY
+#&gt; ✖  Not Found:  Rosa wichurae
+#&gt; ✔  Found:  Pseuduvaria hyadena
 #&gt; ══  Results  ═════════════════
 #&gt; 
 #&gt; ● Total: 3 
-#&gt; ● Found: 3 
-#&gt; ● Not Found: 0</code></pre>
+#&gt; ● Found: 2 
+#&gt; ● Not Found: 1</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">taxon_last</span>()</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">z</a></code></pre></div>
 <pre><code>#&gt; &lt;taxon state&gt; 
 #&gt;  class: gbifid
-#&gt;  elapsed (sec): 2.71
+#&gt;  elapsed (sec): 4.32
 #&gt;  count: 3
-#&gt;   Morinda ammitia: 5339850
-#&gt;   Cryptocarya myrcioides: 4183063
-#&gt;   Scorzoneroides carpetana: 3133528</code></pre>
+#&gt;   Wettinia longipetala: 2736971
+#&gt;   Rosa wichurae: NA
+#&gt;   Pseuduvaria hyadena: 6308427</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_remaining</span>()</a></code></pre></div>
 <pre><code>#&gt; character(0)</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_completed</span>()</a></code></pre></div>
-<pre><code>#&gt; [1] &quot;Cryptocarya myrcioides&quot;   &quot;Morinda ammitia&quot;         
-#&gt; [3] &quot;Scorzoneroides carpetana&quot;</code></pre>
+<pre><code>#&gt; [1] &quot;Pseuduvaria hyadena&quot;  &quot;Rosa wichurae&quot;        &quot;Wettinia longipetala&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></a></code></pre></div>
 <pre><code>#&gt; [1] 3</code></pre>
 <p>See <code>?taxon_state</code> with <code>taxize</code> loaded to get all the details on working
