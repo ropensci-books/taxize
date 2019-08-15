@@ -8,21 +8,23 @@ knitr::opts_chunk$set(
 
 # Other packages {#other-packages}
 
-## taxize built on {#taxize-built-on}
+## packages taxize leverages {#taxize-built-on}
 
 There's a number of packages that `taxize` builds on:
 
-* bold
-* rredlist
-* rotl
-* ritis
-* worrms
-* natserv
-* wikitaxa
+* [bold](#package-bold)
+* [rredlist](#package-rredlist)
+* [rotl](#package-rotl)
+* [ritis](#package-ritis)
+* [worrms](#package-worrms)
+* [natserv](#package-natserv)
+* [wikitaxa](#package-wikitaxa)
 
-You can use these packages individually if you're only interesting
-in the data from that data source. Furthermore, each of these packages
-has more functionality for dealing with that specific data source.
+You can use these packages individually if you're only interested
+in the data from that one data source. Furthermore, each of these packages
+has more functionality for dealing with that specific data source. The 
+benefit of using `taxize` is that it attemps to make a more consistent 
+interface across the different data sources.
 
 ### package: bold {#package-bold}
 
@@ -35,6 +37,8 @@ barcoding data, and includes taxonomic information.
 The [rredlist][] package interfaces with [IUCN Red List of Threatened Species](http://www.iucnredlist.org/).
 They have various kinds of data around the life history of the various threatneed
 species, including taxonomic information.
+
+> Important: An API key is required for this package. Request one at <http://apiv3.iucnredlist.org/api/v3/token>. It is not unusual to have to wait many weeks to get your key.
 
 
 ### package: rotl {#package-rotl}

@@ -153,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="progress-state.html"><a href="progress-state.html#state"><i class="fa fa-check"></i><b>7.2</b> State</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>8</b> Other packages</a><ul>
-<li class="chapter" data-level="8.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>8.1</b> taxize built on</a><ul>
+<li class="chapter" data-level="8.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>8.1</b> packages taxize leverages</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="other-packages.html"><a href="other-packages.html#package-bold"><i class="fa fa-check"></i><b>8.1.1</b> package: bold</a></li>
 <li class="chapter" data-level="8.1.2" data-path="other-packages.html"><a href="other-packages.html#package-rredlist"><i class="fa fa-check"></i><b>8.1.2</b> package: rredlist</a></li>
 <li class="chapter" data-level="8.1.3" data-path="other-packages.html"><a href="other-packages.html#package-rotl"><i class="fa fa-check"></i><b>8.1.3</b> package: rotl</a></li>
@@ -167,10 +167,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>9</b> taxizedb</a><ul>
 <li class="chapter" data-level="9.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>9.1</b> other sections</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="contribuors.html"><a href="contribuors.html"><i class="fa fa-check"></i><b>10</b> Contributors</a></li>
+<li class="chapter" data-level="10" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>10</b> Contributing</a><ul>
+<li class="chapter" data-level="10.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>10.1</b> Contributing to this book</a></li>
+<li class="chapter" data-level="10.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>10.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>10.2.1</b> Bugs?</a></li>
+<li class="chapter" data-level="10.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>10.2.2</b> Code contributions</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>11</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="contribuors.html" target="blank">(c) The Contributors, 2018</a></li>
+<li><a href="contribuors.html" target="blank">(c) Scott Chamberlain, 2019</a></li>
 
 </ul>
 
@@ -192,20 +198,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="other-packages" class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> Other packages</h1>
 <div id="taxize-built-on" class="section level2">
-<h2><span class="header-section-number">8.1</span> taxize built on</h2>
+<h2><span class="header-section-number">8.1</span> packages taxize leverages</h2>
 <p>There’s a number of packages that <code>taxize</code> builds on:</p>
 <ul>
-<li>bold</li>
-<li>rredlist</li>
-<li>rotl</li>
-<li>ritis</li>
-<li>worrms</li>
-<li>natserv</li>
-<li>wikitaxa</li>
+<li><a href="other-packages.html#package-bold">bold</a></li>
+<li><a href="other-packages.html#package-rredlist">rredlist</a></li>
+<li><a href="other-packages.html#package-rotl">rotl</a></li>
+<li><a href="other-packages.html#package-ritis">ritis</a></li>
+<li><a href="other-packages.html#package-worrms">worrms</a></li>
+<li><a href="other-packages.html#package-natserv">natserv</a></li>
+<li><a href="other-packages.html#package-wikitaxa">wikitaxa</a></li>
 </ul>
-<p>You can use these packages individually if you’re only interesting
-in the data from that data source. Furthermore, each of these packages
-has more functionality for dealing with that specific data source.</p>
+<p>You can use these packages individually if you’re only interested
+in the data from that one data source. Furthermore, each of these packages
+has more functionality for dealing with that specific data source. The
+benefit of using <code>taxize</code> is that it attemps to make a more consistent
+interface across the different data sources.</p>
 <div id="package-bold" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> package: bold</h3>
 <p>The <a href="https://github.com/ropensci/bold">bold</a> package interfaces with <a href="http://boldsystems.org/">BOLD Systems</a> which hosts
@@ -216,6 +224,9 @@ barcoding data, and includes taxonomic information.</p>
 <p>The <a href="https://github.com/ropensci/rredlist">rredlist</a> package interfaces with <a href="http://www.iucnredlist.org/">IUCN Red List of Threatened Species</a>.
 They have various kinds of data around the life history of the various threatneed
 species, including taxonomic information.</p>
+<blockquote>
+<p>Important: An API key is required for this package. Request one at <a href="http://apiv3.iucnredlist.org/api/v3/token" class="uri">http://apiv3.iucnredlist.org/api/v3/token</a>. It is not unusual to have to wait many weeks to get your key.</p>
+</blockquote>
 </div>
 <div id="package-rotl" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> package: rotl</h3>
