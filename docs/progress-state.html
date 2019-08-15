@@ -153,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="progress-state.html"><a href="progress-state.html#state"><i class="fa fa-check"></i><b>7.2</b> State</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>8</b> Other packages</a><ul>
-<li class="chapter" data-level="8.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>8.1</b> taxize built on</a><ul>
+<li class="chapter" data-level="8.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>8.1</b> packages taxize leverages</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="other-packages.html"><a href="other-packages.html#package-bold"><i class="fa fa-check"></i><b>8.1.1</b> package: bold</a></li>
 <li class="chapter" data-level="8.1.2" data-path="other-packages.html"><a href="other-packages.html#package-rredlist"><i class="fa fa-check"></i><b>8.1.2</b> package: rredlist</a></li>
 <li class="chapter" data-level="8.1.3" data-path="other-packages.html"><a href="other-packages.html#package-rotl"><i class="fa fa-check"></i><b>8.1.3</b> package: rotl</a></li>
@@ -167,10 +167,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>9</b> taxizedb</a><ul>
 <li class="chapter" data-level="9.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>9.1</b> other sections</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="contribuors.html"><a href="contribuors.html"><i class="fa fa-check"></i><b>10</b> Contributors</a></li>
+<li class="chapter" data-level="10" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>10</b> Contributing</a><ul>
+<li class="chapter" data-level="10.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>10.1</b> Contributing to this book</a></li>
+<li class="chapter" data-level="10.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>10.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>10.2.1</b> Bugs?</a></li>
+<li class="chapter" data-level="10.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>10.2.2</b> Code contributions</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>11</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="contribuors.html" target="blank">(c) The Contributors, 2018</a></li>
+<li><a href="contribuors.html" target="blank">(c) Scott Chamberlain, 2019</a></li>
 
 </ul>
 
@@ -214,6 +220,31 @@ has is <code>taxon_state_messages</code>, which is a boolean (default: <code>TRU
 controls messages printed by <code>progressor</code> - you can set
 <code>taxon_state_messages=FALSE</code> if you want to suppress messages from
 <code>progressor</code>.</p>
+<p>Messages look like:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">get_uid</span>(<span class="kw">c</span>(<span class="st">&quot;Chironomus riparius&quot;</span>, <span class="st">&quot;howdy&quot;</span>))</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; ══  2 queries  ═══════════════</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; Retrieving data for taxon &#39;Chironomus riparius&#39;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; ✔  Found:  Chironomus+riparius</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt; Retrieving data for taxon &#39;howdy&#39;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; ✖  Not Found:  foo bar</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; ══  Results  ═════════════════</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt; ● Total: 2</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; ● Found: 1</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt; ● Not Found: 1</span></a></code></pre></div>
+<p>Giving:</p>
+<ul>
+<li><code>2 queries</code>: number of names being searched</li>
+<li><code>Retrieving data for ...</code>: which name is being searched</li>
+<li><code>✔  Found: ...</code>: when a name is found, there’s a <code>✔</code> and the name</li>
+<li><code>✖  Not Found: ...</code>: when a name is not found, there’s a <code>✖</code> and the name</li>
+<li>At the end is a summary of number of names searched, number of names
+found and number of names not found</li>
+</ul>
 </div>
 <div id="state" class="section level2">
 <h2><span class="header-section-number">7.2</span> State</h2>
@@ -225,38 +256,32 @@ because of any number of things (e.g., internet goes out, the dreaded curl
 timeout, you hit the wrong key, the remote data provider temporarily goes down)
 you can call <code>taxon_last()</code> and pass that in to your <code>get_*()</code> function to
 start from where you left off before the interruption.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</a></code></pre></div>
 <pre><code>#&gt; ══  3 queries  ═══════════════
-#&gt; ✔  Found:  Pseudolmedia laevigata
-#&gt; ✔  Found:  Trichomanes trigonum
-#&gt;    gbifid                               scientificname    rank  status
-#&gt; 1 5529067 Paronychia australis Gillies ex Hook. &amp; Arn. species SYNONYM
-#&gt; 2 8504999                 Paronychia australis Gillies species SYNONYM
-#&gt;   matchtype
-#&gt; 1     EXACT
-#&gt; 2     EXACT
-#&gt; ✖  Not Found:  Paronychia australis
+#&gt; ✔  Found:  Morinda ammitia
+#&gt; ✔  Found:  Cryptocarya myrcioides
+#&gt; ✔  Found:  Scorzoneroides carpetana
 #&gt; ══  Results  ═════════════════
 #&gt; 
 #&gt; ● Total: 3 
-#&gt; ● Found: 2 
-#&gt; ● Not Found: 1</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">taxon_last</span>()</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">z</a></code></pre></div>
+#&gt; ● Found: 3 
+#&gt; ● Not Found: 0</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">taxon_last</span>()</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">z</a></code></pre></div>
 <pre><code>#&gt; &lt;taxon state&gt; 
 #&gt;  class: gbifid
-#&gt;  elapsed (sec): 2.12
+#&gt;  elapsed (sec): 2.71
 #&gt;  count: 3
-#&gt;   Pseudolmedia laevigata: 3764182
-#&gt;   Trichomanes trigonum: 5275211
-#&gt;   Paronychia australis: NA</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_remaining</span>()</a></code></pre></div>
+#&gt;   Morinda ammitia: 5339850
+#&gt;   Cryptocarya myrcioides: 4183063
+#&gt;   Scorzoneroides carpetana: 3133528</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_remaining</span>()</a></code></pre></div>
 <pre><code>#&gt; character(0)</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_completed</span>()</a></code></pre></div>
-<pre><code>#&gt; [1] &quot;Paronychia australis&quot;   &quot;Pseudolmedia laevigata&quot;
-#&gt; [3] &quot;Trichomanes trigonum&quot;</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">z<span class="op">$</span><span class="kw">taxa_completed</span>()</a></code></pre></div>
+<pre><code>#&gt; [1] &quot;Cryptocarya myrcioides&quot;   &quot;Morinda ammitia&quot;         
+#&gt; [3] &quot;Scorzoneroides carpetana&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></a></code></pre></div>
 <pre><code>#&gt; [1] 3</code></pre>
 <p>See <code>?taxon_state</code> with <code>taxize</code> loaded to get all the details on working
 with taxon state objects.</p>

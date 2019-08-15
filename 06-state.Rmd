@@ -39,6 +39,35 @@ controls messages printed by `progressor` - you can set
 `taxon_state_messages=FALSE` if you want to suppress messages from
 `progressor`.
 
+Messages look like:
+
+```r
+get_uid(c("Chironomus riparius", "howdy"))
+#> ══  2 queries  ═══════════════
+#> 
+#> Retrieving data for taxon 'Chironomus riparius'
+#> 
+#> ✔  Found:  Chironomus+riparius
+#> 
+#> Retrieving data for taxon 'howdy'
+#> 
+#> ✖  Not Found:  foo bar
+#> ══  Results  ═════════════════
+#> 
+#> ● Total: 2
+#> ● Found: 1
+#> ● Not Found: 1
+```
+
+Giving:
+
+- `2 queries`: number of names being searched
+- `Retrieving data for ...`: which name is being searched
+- `✔  Found: ...`: when a name is found, there's a `✔` and the name
+- `✖  Not Found: ...`: when a name is not found, there's a `✖` and the name
+- At the end is a summary of number of names searched, number of names
+found and number of names not found
+
 ## State {#state}
 
 The first parameter of every `get_*()` function now accepts either one or
