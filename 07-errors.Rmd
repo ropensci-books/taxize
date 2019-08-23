@@ -1,0 +1,90 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# Errors {#errors}
+
+If you get an error while using `taxize`, please [open an issue][ti]
+and we'll try to address the problem.
+
+A particular suite of errors, HTTP errors, are not solvable entirely
+within the package - but we make sure to pass the HTTP errors on to
+the user to help diagnose the issue.
+
+## HTTP errors {#errors-http}
+
+HTTP errors are the most likely errors you'll see in `taxize`. [HTTP][wikihttp]
+is the protocol by which we request data for you from the data provider.
+There can be problems on the data provider's side, somewhere en route,
+or on your end (your computer). `taxize` should give the user the
+[HTTP status code][wikihttpcode] in the error message when an error occurs;
+error codes are likely to start with either 4 or 5, and have two other digits.
+
+### Data provider errors: 500 series HTTP errors
+
+The 500 series errors are those arising from the data provider. The most
+common codes are:
+
+* 500 Internal Server Error: This is the least specific server error,
+and is usually seen when something went wrong on their end that they
+didn't account for in their code, leading to some unknown error.
+* 502 Bad Gateway: The data provider was fetching some data from
+somewhere else to serve your request and a problem happened with that
+upstream source.
+* 503 Service Unavailable: This is typically a temporary problem; often
+given when a server is handling too many requests, and is briefly
+down.
+
+An example (this error has been fixed in the package). From
+[taxize issue #601](https://github.com/ropensci/taxize/issues/601)
+
+```r
+iplant_resolve(query="Mimulus cardinalis var. verbenaceus")
+#> In iplant_resolve(query = "Mimulus cardinalis var. verbenaceus") :
+#>  Bad Gateway (HTTP 502).
+```
+
+As we get user reports of errors like these we report them to the
+data provider and ask them to make a fix.
+
+### User errors: 400 series HTTP errors
+
+The 400 series errors are those arising from the user. That is,
+something about the HTTP request as composed by the user (in this case,
+the person plus the `taxize` package) was not done correctly
+according to the data provider. Some common codes are:
+
+* 400 Bad Request: Similar to the 500 error, this doesn't usually include
+a reason for why the request is bad, just that it is.
+* 401 Unauthorized: This is given when you haven't provided a valid
+authorization key (API key/token). See `?taxize-authentication` and
+`?key_helpers` when `taxize` is loaded in R.
+* 404 Not Found: You probably shouldn't see this in the context of
+using this package, but it's possible.
+* 408 Request Timeout: You could get this error code if the request
+you've sent has taken longer to process by the data provider than
+they've allowed for. For example, if the data provider set a maximum
+time to process requests of 30 seconds, but yours took longer than
+that, then you could get this error.
+* 414 URI Too Long: This can happen if the URL sent is too long.
+
+From [taxize issue #698](https://github.com/ropensci/taxize/issues/698)
+(this error has been fixed in `taxize`):
+
+```r
+downstream("Aspergillus", db = 'ncbi', downto = 'species')
+#> You may want to split your ids up into chunks
+#> Error: Request-URI Too Long (HTTP 414)
+```
+
+In any of these cases [open an issue][ti] and we'll see if we can
+sort it out.
+
+
+[wikihttp]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+[wikihttpcode]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+[ti]: https://github.com/ropensci/taxize/issues
