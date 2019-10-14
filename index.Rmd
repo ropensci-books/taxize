@@ -37,8 +37,7 @@ scientific to common names and vice versa, and more.
 > James O'Donnell, Jari Oksanen, Bastian Greshake Tzovaras,
 > Philippe Marchand, Vinh Tran, Maëlle Salmon, Gaopeng Li,
 > and Matthias Grenié. (2019) taxize: Taxonomic information from
-> around the web. R package version 0.9.8.
-> https://github.com/ropensci/taxize
+> around the web. R package v0.9.9. https://github.com/ropensci/taxize
 
 ## Installation
 
@@ -51,7 +50,8 @@ install.packages("taxize")
 Development version from GitHub
 
 ```{r eval=FALSE}
-devtools::install_github("ropensci/taxize")
+install.packages("remotes")
+remotes::install_github("ropensci/taxize")
 ```
 
 Load library
