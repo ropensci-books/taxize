@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Usage | taxize book</title>
   <meta name="description" content="taxize manual" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Usage | taxize book" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="taxize manual" />
-  <meta name="github-repo" content="ropensci/taxize-book" />
+  <meta name="github-repo" content="ropensci-books/taxize" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 11 Usage | taxize book" />
@@ -51,25 +51,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +79,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,40 +130,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">taxize book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> taxize manual</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> taxize manual</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#info"><i class="fa fa-check"></i><b>1.1</b> Info</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citing-taxize"><i class="fa fa-check"></i><b>1.2</b> Citing taxize</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.3</b> Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#user-interface"><i class="fa fa-check"></i><b>2.1</b> User interface</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#related-tools"><i class="fa fa-check"></i><b>2.2</b> Related tools</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Data sources</a></li>
 <li class="chapter" data-level="4" data-path="authentication.html"><a href="authentication.html"><i class="fa fa-check"></i><b>4</b> Authentication</a></li>
-<li class="chapter" data-level="5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>5</b> Identifiers</a><ul>
+<li class="chapter" data-level="5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>5</b> Identifiers</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="identifiers.html"><a href="identifiers.html#get-functions"><i class="fa fa-check"></i><b>5.1</b> get functions</a></li>
 <li class="chapter" data-level="5.2" data-path="identifiers.html"><a href="identifiers.html#get-functions-return-objects"><i class="fa fa-check"></i><b>5.2</b> get functions return objects</a></li>
 <li class="chapter" data-level="5.3" data-path="identifiers.html"><a href="identifiers.html#identifier-notes"><i class="fa fa-check"></i><b>5.3</b> identifier notes</a></li>
 <li class="chapter" data-level="5.4" data-path="identifiers.html"><a href="identifiers.html#looking-up-taxa-on-the-web"><i class="fa fa-check"></i><b>5.4</b> Looking up taxa on the web</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>6</b> Classification</a><ul>
+<li class="chapter" data-level="6" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>6</b> Classification</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="classification.html"><a href="classification.html#classification-usage"><i class="fa fa-check"></i><b>6.1</b> Usage</a></li>
 <li class="chapter" data-level="6.2" data-path="classification.html"><a href="classification.html#other-sections"><i class="fa fa-check"></i><b>6.2</b> Other sections?</a></li>
 <li class="chapter" data-level="6.3" data-path="classification.html"><a href="classification.html#classification-related"><i class="fa fa-check"></i><b>6.3</b> Related</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="progress-state.html"><a href="progress-state.html"><i class="fa fa-check"></i><b>7</b> Progress and state</a><ul>
+<li class="chapter" data-level="7" data-path="progress-state.html"><a href="progress-state.html"><i class="fa fa-check"></i><b>7</b> Progress and state</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="progress-state.html"><a href="progress-state.html#progress"><i class="fa fa-check"></i><b>7.1</b> Progress</a></li>
 <li class="chapter" data-level="7.2" data-path="progress-state.html"><a href="progress-state.html#state"><i class="fa fa-check"></i><b>7.2</b> State</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="errors.html"><a href="errors.html"><i class="fa fa-check"></i><b>8</b> Errors</a><ul>
-<li class="chapter" data-level="8.1" data-path="errors.html"><a href="errors.html#errors-http"><i class="fa fa-check"></i><b>8.1</b> HTTP errors</a><ul>
+<li class="chapter" data-level="8" data-path="errors.html"><a href="errors.html"><i class="fa fa-check"></i><b>8</b> Errors</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="errors.html"><a href="errors.html#errors-http"><i class="fa fa-check"></i><b>8.1</b> HTTP errors</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="errors.html"><a href="errors.html#data-provider-errors-500-series-http-errors"><i class="fa fa-check"></i><b>8.1.1</b> Data provider errors: 500 series HTTP errors</a></li>
 <li class="chapter" data-level="8.1.2" data-path="errors.html"><a href="errors.html#user-errors-400-series-http-errors"><i class="fa fa-check"></i><b>8.1.2</b> User errors: 400 series HTTP errors</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>9</b> Other packages</a><ul>
-<li class="chapter" data-level="9.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>9.1</b> packages taxize leverages</a><ul>
+<li class="chapter" data-level="9" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>9</b> Other packages</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>9.1</b> packages taxize leverages</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="other-packages.html"><a href="other-packages.html#package-bold"><i class="fa fa-check"></i><b>9.1.1</b> package: bold</a></li>
 <li class="chapter" data-level="9.1.2" data-path="other-packages.html"><a href="other-packages.html#package-rredlist"><i class="fa fa-check"></i><b>9.1.2</b> package: rredlist</a></li>
 <li class="chapter" data-level="9.1.3" data-path="other-packages.html"><a href="other-packages.html#package-rotl"><i class="fa fa-check"></i><b>9.1.3</b> package: rotl</a></li>
@@ -173,22 +183,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="other-packages.html"><a href="other-packages.html#related-packages"><i class="fa fa-check"></i><b>9.2</b> related packages</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a><ul>
+<li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a><ul>
+<li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="usage.html"><a href="usage.html#taxize-citations"><i class="fa fa-check"></i><b>11.1</b> Citations</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>12</b> Contributing</a><ul>
+<li class="chapter" data-level="12" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>12</b> Contributing</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>12.1</b> Contributing to this book</a></li>
-<li class="chapter" data-level="12.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>12.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="12.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>12.2</b> Contributing to taxize</a>
+<ul>
 <li class="chapter" data-level="12.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>12.2.1</b> Bugs?</a></li>
 <li class="chapter" data-level="12.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>12.2.2</b> Code contributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>13</b> session info</a></li>
 <li class="divider"></li>
-<li>(c) Scott Chamberlain, 2019</li>
+<li>(c) Scott Chamberlain, 2020</li>
 
 </ul>
 
@@ -237,6 +251,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Grattarola, F., Botto, G., da Rosa, I., Gobel, N., González, E., González, J., … Pincheira-Donoso, D. (2019). Biodiversidata: An Open-Access Biodiversity Database for Uruguay. Biodiversity Data Journal, 7. <a href="https://doi.org/10.3897/bdj.7.e36226" class="uri">https://doi.org/10.3897/bdj.7.e36226</a></li>
 <li>Danella Figo, D., De Amicis, K., Neiva Santos de Aquino, D., Pomiecinski, F., Gadermaier, G., Briza, P., … Souza Santos, K. (2019). Cashew Tree Pollen: An Unknown Source of IgE-Reactive Molecules. International Journal of Molecular Sciences, 20(10), 2397. <a href="https://doi.org/10.3390/ijms20102397" class="uri">https://doi.org/10.3390/ijms20102397</a></li>
 <li>Hagen, O., Vaterlaus, L., Albouy, C., Brown, A., Leugger, F., Onstein, R. E., … Pellissier, L. (2019). Mountain building, climate cooling and the richness of cold‐adapted plants in the Northern Hemisphere. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.13653" class="uri">https://doi.org/10.1111/jbi.13653</a></li>
+<li>Lennox, R. J., Veríssimo, D., Twardek, W. M., Davis, C. R., &amp; Jarić, I. (2019). Sentiment analysis as a measure of conservation culture in scientific literature. Conservation Biology. <a href="https://doi.org/10.1111/cobi.13404" class="uri">https://doi.org/10.1111/cobi.13404</a></li>
+<li>Esperon‐Rodriguez, M., Power, S. A., Tjoelker, M. G., Beaumont, L. J., Burley, H., Caballero‐Rodriguez, D., &amp; Rymer, P. D. (2019). Assessing the vulnerability of Australia’s urban forests to climate extremes. Plants, People, Planet. <a href="https://doi.org/10.1002/ppp3.10064" class="uri">https://doi.org/10.1002/ppp3.10064</a></li>
+<li>Cazelles, K., Bartley, T., Guzzo, M. M., Brice, M., MacDougall, A. S., Bennett, J. R., … McCann, K. S. (2019). Homogenization of freshwater lakes: recent compositional shifts in fish communities are explained by gamefish movement and not climate change. Global Change Biology. <a href="https://doi.org/10.1111/gcb.14829" class="uri">https://doi.org/10.1111/gcb.14829</a></li>
+<li>Bufford, J. L., Hulme, P. E., Sikes, B. A., Cooper, J. A., Johnston, P. R., &amp; Duncan, R. P. (2019). Novel interactions between alien pathogens and native plants increase plant‐pathogen network connectance and decrease specialization. Journal of Ecology. <a href="https://doi.org/10.1111/1365-2745.13293" class="uri">https://doi.org/10.1111/1365-2745.13293</a></li>
 <li>Emer, C., Galetti, M., Pizo, M. A., Guimarães, P. R., Moraes, S., Piratelli, A., &amp; Jordano, P. (2018). Seed-dispersal interactions in fragmented landscapes - a metanetwork approach. Ecology Letters. <a href="https://doi.org/10.1111/ele.12909" class="uri">https://doi.org/10.1111/ele.12909</a></li>
 <li>Surabhi, S., Avvaru, A. K., Sowpati, D. T., &amp; Mishra, R. K. (2018). Patterns of microsatellite distribution reflect the evolution of biological complexity. <a href="https://doi.org/10.1101/253930" class="uri">https://doi.org/10.1101/253930</a></li>
 <li>Khorramdelazad, M., Bar, I., Whatmore, P., Smetham, G., Bhaaskaria, V., Yang, Y., … Ford, R. (2018). Transcriptome profiling of lentil (Lens culinaris) through the first 24 hours of Ascochyta lentis infection reveals key defence response genes. BMC Genomics, 19(1). <a href="https://doi.org/10.1186/s12864-018-4488-1" class="uri">https://doi.org/10.1186/s12864-018-4488-1</a></li>
@@ -251,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Tsuboi, M., van der Bijl, W., Kopperud, B. T., Erritzøe, J., Voje, K. L., Kotrschal, A., … Kolm, N. (2018). Breakdown of brain–body allometry and the encephalization of birds and mammals. Nature Ecology &amp; Evolution. <a href="https://doi.org/10.1038/s41559-018-0632-1" class="uri">https://doi.org/10.1038/s41559-018-0632-1</a></li>
 <li>Grenié, M., Mouillot, D., Villéger, S., Denelle, P., Tucker, C. M., Munoz, F., &amp; Violle, C. (2018). Functional rarity of coral reef fishes at the global scale: Hotspots and challenges for conservation. Biological Conservation, 226, 288–299. <a href="https://doi.org/10.1016/j.biocon.2018.08.011" class="uri">https://doi.org/10.1016/j.biocon.2018.08.011</a></li>
 <li>Niedballa, J. (2018). Managing and Analysing Camera Trapping Data: An Advanced Toolbox (Doctoral dissertation). <a href="https://refubium.fu-berlin.de/bitstream/handle/fub188/22961/Dissertation_Niedballa.pdf?sequence=3&amp;isAllowed=y" class="uri">https://refubium.fu-berlin.de/bitstream/handle/fub188/22961/Dissertation_Niedballa.pdf?sequence=3&amp;isAllowed=y</a></li>
-<li>Morzaria-Luna, H. N., Cruz-Piñón, G., Brusca, R. C., López-Ortiz, A. M., Moreno-Báez, M., Reyes-Bonilla, H., &amp; Turk-Boyer, P. (2018). Biodiversity hotspots are not congruent with conservation areas in the Gulf of California. Biodiversity and Conservation. <a href="https://doi.org/10.1007/s10531-018-1631-x" class="uri">https://doi.org/10.1007/s10531-018-1631-x</a>&quot;</li>
+<li>Morzaria-Luna, H. N., Cruz-Piñón, G., Brusca, R. C., López-Ortiz, A. M., Moreno-Báez, M., Reyes-Bonilla, H., &amp; Turk-Boyer, P. (2018). Biodiversity hotspots are not congruent with conservation areas in the Gulf of California. Biodiversity and Conservation. <a href="https://doi.org/10.1007/s10531-018-1631-x" class="uri">https://doi.org/10.1007/s10531-018-1631-x</a>"</li>
 <li>Vieilledent, G., Fischer, F. J., Chave, J., Guibal, D., Langbour, P., &amp; Gérard, J. (2018). New formula and conversion factor to compute basic wood density of tree species using a global wood technology database. American Journal of Botany. <a href="https://doi.org/10.1002/ajb2.1175" class="uri">https://doi.org/10.1002/ajb2.1175</a></li>
 <li>Milla, R., Bastida, J. M., Turcotte, M. M., Jones, G., Violle, C., Osborne, C. P., … Byun, C. (2018). Phylogenetic patterns and phenotypic profiles of the species of plants and mammals farmed for food. Nature Ecology &amp; Evolution, 2(11), 1808–1817. <a href="https://doi.org/10.1038/s41559-018-0690-4" class="uri">https://doi.org/10.1038/s41559-018-0690-4</a></li>
 <li>Kandlikar, G. S., Gold, Z. J., Cowen, M. C., Meyer, R. S., Freise, A. C., Kraft, N. J. B., … Curd, E. E. (2018). ranacapa: An R package and Shiny web app to explore environmental DNA data with exploratory statistics and interactive visualizations. F1000Research, 7, 1734. <a href="https://doi.org/10.12688/f1000research.16680.1" class="uri">https://doi.org/10.12688/f1000research.16680.1</a></li>
@@ -287,20 +305,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Schwery, O., &amp; O’Meara, B. C. (2016). MonoPhy : a simple R package to find and visualize monophyly issues . PeerJ Computer Science, 2, e56. <a href="doi:10.7717/peerj-cs.56" class="uri">doi:10.7717/peerj-cs.56</a></li>
 <li>Bradie, J., &amp; Leung, B. (2016). A quantitative synthesis of the importance of variables used in MaxEnt species distribution models. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.12894" class="uri">https://doi.org/10.1111/jbi.12894</a></li>
 <li>Bufford, J. L., Hulme, P. E., Sikes, B. A., Cooper, J. A., Johnston, P. R., &amp; Duncan, R. P. (2016). Taxonomic similarity, more than contact opportunity, explains novel plant-pathogen associations between native and alien taxa. New Phytol. <a href="https://doi.org/10.1111/nph.14077" class="uri">https://doi.org/10.1111/nph.14077</a></li>
-<li>Costello, M. J., Basher, Z., McLeod, L., Asaad, I., Claus, S., Vandepitte, L., et al. (2017). Methods for the Study of Marine Biodiversity. In The GEO Handbook on Biodiversity Observation Networks (pp. 129-163). Springer International Publishing. <a href="http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6" class="uri">http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6</a></li>
+<li>Costello, M. J., Basher, Z., McLeod, L., Asaad, I., Claus, S., Vandepitte, L., et al. (2017). Methods for the Study of Marine Biodiversity. In The GEO Handbook on Biodiversity Observation Networks (pp. 129-163). Springer International Publishing. <a href="http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6" class="uri">http://link.springer.com/chapter/10.1007/978-3-319-27288-7_6</a></li>
 <li>Cramer, M. D., &amp; Verboom, G. A. (2016). Measures of biologically relevant environmental heterogeneity improve prediction of regional plant species richness. Journal of Biogeography. <a href="https://doi.org/10.1111/jbi.12911" class="uri">https://doi.org/10.1111/jbi.12911</a></li>
 <li>Eriksson, Björn. 2016. Diversity of ecosystems: Variation in network structure among food webs. <a href="http://www.diva-portal.org/smash/get/diva2:951404/FULLTEXT01.pdf" class="uri">http://www.diva-portal.org/smash/get/diva2:951404/FULLTEXT01.pdf</a></li>
 <li>Foster, Z. S. L., Sharpton, T., &amp; Grunwald, N. J. (2016). MetacodeR: An R package for manipulation and heat tree visualization of community taxonomic data from metabarcoding. <a href="https://doi.org/10.1101/071019" class="uri">https://doi.org/10.1101/071019</a></li>
 <li>Halse-Gramkow, M., Ernst, M., Rønsted, N., Dunn, R. R., &amp; Saslis-Lagoudakis, C. H. (2016). Using evolutionary tools to search for novel psychoactive plants. Plant Genetic Resources, 1–10. <a href="https://doi.org/10.1017/s1479262116000344" class="uri">https://doi.org/10.1017/s1479262116000344</a></li>
-<li>Liang, J., Crowther, T. W., Picard, N., Wiser, S., Zhou, M., Alberti, G., et al. (2016). Positive biodiversity-productivity relationship predominant in global forests. Science, 354(6309), aaf8957–aaf8957. <a href="https://doi.org/10.1126/science.aaf8957" class="uri">https://doi.org/10.1126/science.aaf8957</a></li>
+<li>Liang, J., Crowther, T. W., Picard, N., Wiser, S., Zhou, M., Alberti, G., et al. (2016). Positive biodiversity-productivity relationship predominant in global forests. Science, 354(6309), aaf8957–aaf8957. <a href="https://doi.org/10.1126/science.aaf8957" class="uri">https://doi.org/10.1126/science.aaf8957</a></li>
 <li>Nath, C. D., Munoz, F., Pélissier, R., Burslem, D. F. R. P., &amp; Muthusankar, G. (2016). Growth rings in tropical trees: role of functional traits, environment, and phylogeny. Trees. <a href="https://doi.org/10.1007/s00468-016-1442-1" class="uri">https://doi.org/10.1007/s00468-016-1442-1</a></li>
 <li>Niedballa, J., Sollmann, R., Courtiol, A., &amp; Wilting, A. (2016). camtrapR: an R package for efficient camera trap data management. Methods in Ecology and Evolution. <a href="https://doi.org/10.1111/2041-210x.12600" class="uri">https://doi.org/10.1111/2041-210x.12600</a></li>
 <li>Sclavi, B., &amp; Herrick, J. (2016). Genome size variation and species diversity in salamander families. <a href="https://doi.org/10.1101/065425" class="uri">https://doi.org/10.1101/065425</a></li>
 <li>Vincze, O. (2016). Light enough to travel or wise enough to stay? Brain size evolution and migratory behaviour in birds. Evolution. <a href="https://doi.org/10.1111/evo.13012" class="uri">https://doi.org/10.1111/evo.13012</a></li>
 <li>Wagner, V. (2016). A review of software tools for spell-checking taxon names in vegetation databases. Journal of Vegetation Science. <a href="https://doi.org/10.1111/jvs.12432" class="uri">https://doi.org/10.1111/jvs.12432</a></li>
-<li>Weber, M. G., Porturas, L. D., &amp; Taylor, S. A. (2016). Foliar nectar enhances plant–mite mutualisms: the effect of leaf sugar on the control of powdery mildew by domatia-inhabiting mites. Annals of Botany, mcw118. <a href="https://doi.org/10.1093/aob/mcw118" class="uri">https://doi.org/10.1093/aob/mcw118</a></li>
 <li>Wiser, S. K. (2016). Achievements and challenges in the integration, reuse and synthesis of vegetation plot data. Journal of Vegetation Science. <a href="https://doi.org/10.1111/jvs.12419" class="uri">https://doi.org/10.1111/jvs.12419</a></li>
-<li>Galata, V., Backes, C., Laczny, C. C., Hemmrich-Stanisak, G., Li, H., Smoot, L., et al. (2016). Comparing genome versus proteome-based identification of clinical bacterial isolates. Briefings in Bioinformatics, bbw122. <a href="https://doi.org/10.1093/bib/bbw122" class="uri">https://doi.org/10.1093/bib/bbw122</a></li>
+<li>Galata, V., Backes, C., Laczny, C. C., Hemmrich-Stanisak, G., Li, H., Smoot, L., et al. (2016). Comparing genome versus proteome-based identification of clinical bacterial isolates. Briefings in Bioinformatics, bbw122. <a href="https://doi.org/10.1093/bib/bbw122" class="uri">https://doi.org/10.1093/bib/bbw122</a></li>
 <li>Lucas, T. C. (2016). The role of population structure and size in determining bat pathogen richness (Doctoral dissertation, UCL (University College London)). <a href="http://discovery.ucl.ac.uk/1531925/" class="uri">http://discovery.ucl.ac.uk/1531925/</a></li>
 <li>Bartomeus, I., Cariveau, D., Harrison, T., &amp; Winfree, R. (2016). On the inconsistency of pollinator species traits for predicting either response to agricultural intensification or functional contribution. <a href="https://doi.org/10.1101/072132" class="uri">https://doi.org/10.1101/072132</a></li>
 <li>Baden, H. M., Särkinen, T., Conde, D. A., Matthews, A. C., Vandrot, H., Chicas, S., … Harris, D. J. (2015). A BOTANICAL INVENTORY OF FOREST ON KARSTIC LIMESTONE AND METAMORPHIC SUBSTRATE IN THE CHIQUIBUL FOREST, BELIZE, WITH FOCUS ON WOODY TAXA. Edinburgh Journal of Botany, 73(01), 39–81. <a href="doi:10.1017/s0960428615000256" class="uri">doi:10.1017/s0960428615000256</a></li>
@@ -347,12 +364,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -360,10 +376,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/taxize-book/edit/master/19-usage.Rmd",
+"link": "https://github.com/ropensci-books/taxize/edit/master/19-usage.Rmd",
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

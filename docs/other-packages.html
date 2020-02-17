@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 Other packages | taxize book</title>
   <meta name="description" content="taxize manual" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 Other packages | taxize book" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="taxize manual" />
-  <meta name="github-repo" content="ropensci/taxize-book" />
+  <meta name="github-repo" content="ropensci-books/taxize" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 9 Other packages | taxize book" />
@@ -51,25 +51,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -78,9 +79,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -129,40 +130,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">taxize book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> taxize manual</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> taxize manual</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#info"><i class="fa fa-check"></i><b>1.1</b> Info</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citing-taxize"><i class="fa fa-check"></i><b>1.2</b> Citing taxize</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.3</b> Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#user-interface"><i class="fa fa-check"></i><b>2.1</b> User interface</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#related-tools"><i class="fa fa-check"></i><b>2.2</b> Related tools</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Data sources</a></li>
 <li class="chapter" data-level="4" data-path="authentication.html"><a href="authentication.html"><i class="fa fa-check"></i><b>4</b> Authentication</a></li>
-<li class="chapter" data-level="5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>5</b> Identifiers</a><ul>
+<li class="chapter" data-level="5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>5</b> Identifiers</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="identifiers.html"><a href="identifiers.html#get-functions"><i class="fa fa-check"></i><b>5.1</b> get functions</a></li>
 <li class="chapter" data-level="5.2" data-path="identifiers.html"><a href="identifiers.html#get-functions-return-objects"><i class="fa fa-check"></i><b>5.2</b> get functions return objects</a></li>
 <li class="chapter" data-level="5.3" data-path="identifiers.html"><a href="identifiers.html#identifier-notes"><i class="fa fa-check"></i><b>5.3</b> identifier notes</a></li>
 <li class="chapter" data-level="5.4" data-path="identifiers.html"><a href="identifiers.html#looking-up-taxa-on-the-web"><i class="fa fa-check"></i><b>5.4</b> Looking up taxa on the web</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>6</b> Classification</a><ul>
+<li class="chapter" data-level="6" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>6</b> Classification</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="classification.html"><a href="classification.html#classification-usage"><i class="fa fa-check"></i><b>6.1</b> Usage</a></li>
 <li class="chapter" data-level="6.2" data-path="classification.html"><a href="classification.html#other-sections"><i class="fa fa-check"></i><b>6.2</b> Other sections?</a></li>
 <li class="chapter" data-level="6.3" data-path="classification.html"><a href="classification.html#classification-related"><i class="fa fa-check"></i><b>6.3</b> Related</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="progress-state.html"><a href="progress-state.html"><i class="fa fa-check"></i><b>7</b> Progress and state</a><ul>
+<li class="chapter" data-level="7" data-path="progress-state.html"><a href="progress-state.html"><i class="fa fa-check"></i><b>7</b> Progress and state</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="progress-state.html"><a href="progress-state.html#progress"><i class="fa fa-check"></i><b>7.1</b> Progress</a></li>
 <li class="chapter" data-level="7.2" data-path="progress-state.html"><a href="progress-state.html#state"><i class="fa fa-check"></i><b>7.2</b> State</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="errors.html"><a href="errors.html"><i class="fa fa-check"></i><b>8</b> Errors</a><ul>
-<li class="chapter" data-level="8.1" data-path="errors.html"><a href="errors.html#errors-http"><i class="fa fa-check"></i><b>8.1</b> HTTP errors</a><ul>
+<li class="chapter" data-level="8" data-path="errors.html"><a href="errors.html"><i class="fa fa-check"></i><b>8</b> Errors</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="errors.html"><a href="errors.html#errors-http"><i class="fa fa-check"></i><b>8.1</b> HTTP errors</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="errors.html"><a href="errors.html#data-provider-errors-500-series-http-errors"><i class="fa fa-check"></i><b>8.1.1</b> Data provider errors: 500 series HTTP errors</a></li>
 <li class="chapter" data-level="8.1.2" data-path="errors.html"><a href="errors.html#user-errors-400-series-http-errors"><i class="fa fa-check"></i><b>8.1.2</b> User errors: 400 series HTTP errors</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>9</b> Other packages</a><ul>
-<li class="chapter" data-level="9.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>9.1</b> packages taxize leverages</a><ul>
+<li class="chapter" data-level="9" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>9</b> Other packages</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="other-packages.html"><a href="other-packages.html#taxize-built-on"><i class="fa fa-check"></i><b>9.1</b> packages taxize leverages</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="other-packages.html"><a href="other-packages.html#package-bold"><i class="fa fa-check"></i><b>9.1.1</b> package: bold</a></li>
 <li class="chapter" data-level="9.1.2" data-path="other-packages.html"><a href="other-packages.html#package-rredlist"><i class="fa fa-check"></i><b>9.1.2</b> package: rredlist</a></li>
 <li class="chapter" data-level="9.1.3" data-path="other-packages.html"><a href="other-packages.html#package-rotl"><i class="fa fa-check"></i><b>9.1.3</b> package: rotl</a></li>
@@ -173,22 +183,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="other-packages.html"><a href="other-packages.html#related-packages"><i class="fa fa-check"></i><b>9.2</b> related packages</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a><ul>
+<li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a><ul>
+<li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="usage.html"><a href="usage.html#taxize-citations"><i class="fa fa-check"></i><b>11.1</b> Citations</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>12</b> Contributing</a><ul>
+<li class="chapter" data-level="12" data-path="contributing.html"><a href="contributing.html"><i class="fa fa-check"></i><b>12</b> Contributing</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="contributing.html"><a href="contributing.html#contribute-taxize-book"><i class="fa fa-check"></i><b>12.1</b> Contributing to this book</a></li>
-<li class="chapter" data-level="12.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>12.2</b> Contributing to taxize</a><ul>
+<li class="chapter" data-level="12.2" data-path="contributing.html"><a href="contributing.html#contribute-taxize"><i class="fa fa-check"></i><b>12.2</b> Contributing to taxize</a>
+<ul>
 <li class="chapter" data-level="12.2.1" data-path="contributing.html"><a href="contributing.html#bugs"><i class="fa fa-check"></i><b>12.2.1</b> Bugs?</a></li>
 <li class="chapter" data-level="12.2.2" data-path="contributing.html"><a href="contributing.html#code-contributions"><i class="fa fa-check"></i><b>12.2.2</b> Code contributions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>13</b> session info</a></li>
 <li class="divider"></li>
-<li>(c) Scott Chamberlain, 2019</li>
+<li>(c) Scott Chamberlain, 2020</li>
 
 </ul>
 
@@ -302,12 +316,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -315,10 +328,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/taxize-book/edit/master/11-other-packages.Rmd",
+"link": "https://github.com/ropensci-books/taxize/edit/master/11-other-packages.Rmd",
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

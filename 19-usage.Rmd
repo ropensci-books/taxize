@@ -6,6 +6,7 @@
 strxt <- function(string, pattern) {
   regmatches(string, gregexpr(pattern, string, perl = TRUE))[[1]]
 }
+comp <- function(x) Filter(Negate(is.null), x)
 ```
 
 ```{r usage-get-citaitons, echo=FALSE, cache=TRUE}
@@ -26,7 +27,8 @@ There's currently `r NROW(df)` `taxize` citations.
 library(handlr)
 library(dplyr)
 parse_cit <- function(x) {
-  z = HandlrClient$new(x)
+  z = tryCatch(HandlrClient$new(x), error = function(e) e)
+  if (inherits(z, "error")) return(NULL)
   if (is.null(z$doi)) {
     yr <- strxt(x, "\\s\\(?[0-9]{4}\\.?\\)?")
     yr <- gsub("\\s+|\\.|\\(|\\)", "", yr)
@@ -44,6 +46,7 @@ parse_cit <- function(x) {
   }
 }
 res <- lapply(cites, parse_cit)
+res <- comp(res)
 alldata <- data.table::rbindlist(res)
 alldata$year <- as.numeric(alldata$year)
 adtbl <- tbl_df(alldata)
