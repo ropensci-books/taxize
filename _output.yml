@@ -5,8 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">taxize book</a></li>
       after: |
-        <li>(c) Scott Chamberlain, 2019</li>
-    edit: https://github.com/ropensci/taxize-book/edit/master/%s
+        <li>(c) Scott Chamberlain, 2020</li>
+    edit: https://github.com/ropensci-books/taxize/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

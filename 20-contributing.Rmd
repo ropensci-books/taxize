@@ -10,7 +10,7 @@ will bring you to the source file for that chapter. You can then
 make an edit right there in your browser, or you can clone down
 the repo and make a change locally, then send a pull request.
 
-The source for this book lives at <https://github.com/ropenscilabs/taxize-book>
+The source for this book lives at <https://github.com/ropensci-books/taxize>
 
 ## Contributing to taxize {#contribute-taxize}
 
