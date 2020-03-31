@@ -10,8 +10,7 @@ require authentication and some do not.
 Some data sources in `taxize` require authentication. Here's a breakdown of which
 ones require authentication, and how to do authentication by data source:
 
-* **Tropicos**: Request a Tropicos API key from <http://services.tropicos.org/help?requestkey>.
-* **EOL**: Request an EOL API key at <https://eol.org/users/sign_up>
+* **Tropicos**: Request a Tropicos API key from <http://services.tropicos.org/help?requestkey>
 * **NCBI Entrez**: From NCBI's docs: "E-utils users are allowed 3
 requests/second without an API key. Create an API key (in your account at
 <https://www.ncbi.nlm.nih.gov/account/>) to increase your e-utils limit to 10
@@ -26,7 +25,6 @@ Save your API keys as the following names either as R options or
 environment variables:
 
 * Tropicos: 'TROPICOS_KEY'
-* EOL: 'EOL_KEY'
 * IUCN: 'IUCN_REDLIST_KEY'
 * ENTREZ: 'ENTREZ_KEY'
 
@@ -41,6 +39,5 @@ When in R, taxize helper functions are provided to help you obtain and setup API
 for each data source that requires them:
 
 * `taxize::use_tropicos()`
-* `taxize::use_eol()`
 * `taxize::use_entrez()`
 * `taxize::use_iucn()`
