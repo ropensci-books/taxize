@@ -36,8 +36,8 @@ scientific to common names and vice versa, and more.
 > Carl Boettiger, Karthik Ram, Ignasi Bartomeus, John Baumgartner,
 > James O'Donnell, Jari Oksanen, Bastian Greshake Tzovaras,
 > Philippe Marchand, Vinh Tran, Maëlle Salmon, Gaopeng Li,
-> and Matthias Grenié. (2019) taxize: Taxonomic information from
-> around the web. R package v0.9.9.94 https://github.com/ropensci/taxize
+> and Matthias Grenié. (2020) taxize: Taxonomic information from
+> around the web. R package v0.9.97 https://github.com/ropensci/taxize
 
 ## Installation
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Progress and state | taxize book</title>
   <meta name="description" content="taxize manual" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Progress and state | taxize book" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
@@ -185,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
+<li class="chapter" data-level="10.1" data-path="classification.html"><a href="classification.html#other-sections"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a>
 <ul>
@@ -285,30 +286,27 @@ start from where you left off before the interruption.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="progress-state.html#cb9-1"></a>spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</span>
 <span id="cb9-2"><a href="progress-state.html#cb9-2"></a>res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</span></code></pre></div>
 <pre><code>#&gt; ══  3 queries  ═══════════════
-#&gt; ✔  Found:  Dypsis fanjana
-#&gt; ✔  Found:  Serjania acapulcensis
-#&gt;    gbifid                         scientificname    rank   status matchtype
-#&gt; 1 8935761 Trichomanes ovale (Wess.Boer) E.Fourn. species ACCEPTED     EXACT
-#&gt; 2 5275186      Trichomanes ovale (Fourn.) W.Boer species  SYNONYM     EXACT
-#&gt; ✖  Not Found:  Trichomanes ovale
+#&gt; ✔  Found:  Josephinia grandiflora
+#&gt; ✔  Found:  Melicope ridsdalei
+#&gt; ✔  Found:  Allolepis texana
 #&gt; ══  Results  ═════════════════
 #&gt; 
 #&gt; ● Total: 3 
-#&gt; ● Found: 2 
-#&gt; ● Not Found: 1</code></pre>
+#&gt; ● Found: 3 
+#&gt; ● Not Found: 0</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="progress-state.html#cb11-1"></a>z &lt;-<span class="st"> </span><span class="kw">taxon_last</span>()</span>
 <span id="cb11-2"><a href="progress-state.html#cb11-2"></a>z</span></code></pre></div>
 <pre><code>#&gt; &lt;taxon state&gt; 
 #&gt;  class: gbifid
-#&gt;  elapsed (sec): 1.49
+#&gt;  elapsed (sec): 2.33
 #&gt;  count: 3
-#&gt;   Dypsis fanjana: 2735808
-#&gt;   Serjania acapulcensis: 5578143
-#&gt;   Trichomanes ovale: NA</code></pre>
+#&gt;   Josephinia grandiflora: 3585205
+#&gt;   Melicope ridsdalei: 3831634
+#&gt;   Allolepis texana: 5289905</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="progress-state.html#cb13-1"></a>z<span class="op">$</span><span class="kw">taxa_remaining</span>()</span></code></pre></div>
 <pre><code>#&gt; character(0)</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="progress-state.html#cb15-1"></a>z<span class="op">$</span><span class="kw">taxa_completed</span>()</span></code></pre></div>
-<pre><code>#&gt; [1] &quot;Dypsis fanjana&quot;        &quot;Serjania acapulcensis&quot; &quot;Trichomanes ovale&quot;</code></pre>
+<pre><code>#&gt; [1] &quot;Allolepis texana&quot;       &quot;Josephinia grandiflora&quot; &quot;Melicope ridsdalei&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="progress-state.html#cb17-1"></a>z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></span></code></pre></div>
 <pre><code>#&gt; [1] 3</code></pre>
 <p>See <code>?taxon_state</code> with <code>taxize</code> loaded to get all the details on working
