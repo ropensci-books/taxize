@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Progress and state | taxize book</title>
   <meta name="description" content="taxize manual" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Progress and state | taxize book" />
   <meta property="og:type" content="book" />
@@ -49,6 +49,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -186,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="taxizedb.html"><a href="taxizedb.html"><i class="fa fa-check"></i><b>10</b> taxizedb</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="classification.html"><a href="classification.html#other-sections"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
+<li class="chapter" data-level="10.1" data-path="taxizedb.html"><a href="taxizedb.html#other-sections-1"><i class="fa fa-check"></i><b>10.1</b> other sections</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>11</b> Usage</a>
 <ul>
@@ -286,9 +288,9 @@ start from where you left off before the interruption.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="progress-state.html#cb9-1"></a>spp &lt;-<span class="st"> </span><span class="kw">names_list</span>(<span class="st">&quot;species&quot;</span>, <span class="dv">3</span>)</span>
 <span id="cb9-2"><a href="progress-state.html#cb9-2"></a>res &lt;-<span class="st"> </span><span class="kw">get_gbifid</span>(spp)</span></code></pre></div>
 <pre><code>#&gt; ══  3 queries  ═══════════════
-#&gt; ✔  Found:  Josephinia grandiflora
-#&gt; ✔  Found:  Melicope ridsdalei
-#&gt; ✔  Found:  Allolepis texana
+#&gt; ✔  Found:  Rhus meyeriana
+#&gt; ✔  Found:  Saurauia wigmanii
+#&gt; ✔  Found:  Ilex pauciflora
 #&gt; ══  Results  ═════════════════
 #&gt; 
 #&gt; ● Total: 3 
@@ -298,15 +300,15 @@ start from where you left off before the interruption.</p>
 <span id="cb11-2"><a href="progress-state.html#cb11-2"></a>z</span></code></pre></div>
 <pre><code>#&gt; &lt;taxon state&gt; 
 #&gt;  class: gbifid
-#&gt;  elapsed (sec): 2.33
+#&gt;  elapsed (sec): 3.54
 #&gt;  count: 3
-#&gt;   Josephinia grandiflora: 3585205
-#&gt;   Melicope ridsdalei: 3831634
-#&gt;   Allolepis texana: 5289905</code></pre>
+#&gt;   Rhus meyeriana: 3659641
+#&gt;   Saurauia wigmanii: 7765753
+#&gt;   Ilex pauciflora: 5533564</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="progress-state.html#cb13-1"></a>z<span class="op">$</span><span class="kw">taxa_remaining</span>()</span></code></pre></div>
 <pre><code>#&gt; character(0)</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="progress-state.html#cb15-1"></a>z<span class="op">$</span><span class="kw">taxa_completed</span>()</span></code></pre></div>
-<pre><code>#&gt; [1] &quot;Allolepis texana&quot;       &quot;Josephinia grandiflora&quot; &quot;Melicope ridsdalei&quot;</code></pre>
+<pre><code>#&gt; [1] &quot;Ilex pauciflora&quot;   &quot;Rhus meyeriana&quot;    &quot;Saurauia wigmanii&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="progress-state.html#cb17-1"></a>z<span class="op">$</span>count <span class="co"># active binding; no parens needed</span></span></code></pre></div>
 <pre><code>#&gt; [1] 3</code></pre>
 <p>See <code>?taxon_state</code> with <code>taxize</code> loaded to get all the details on working
